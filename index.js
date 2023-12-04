@@ -22,7 +22,7 @@ connection: {
     host: process.env.RDS_HOSTNAME || 'localhost',
     user: process.env.RDS_USERNAME || 'test',
     password: process.env.RDS_PASSWORD || 'test',
-    database: process.env.RDS_DB_NAME || 'temp',
+    database: process.env.RDS_DB_NAME || 'intex',
     port: process.env.RDS_PORT || 5432
 }
 });
@@ -52,14 +52,13 @@ app.post("/login", (req, res) => {
         }
         else
         {
-            alert("Invalid Credentials");
+            
             res.render("login")
 
         }
     })
   
 }); 
-
 
 
 app.use(express.static(__dirname + '/public'));
