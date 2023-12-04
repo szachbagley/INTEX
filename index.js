@@ -26,7 +26,7 @@ connection: {
     port: process.env.RDS_PORT || 5432
 }
 });
-
+//test
 
 app.get("/", (req, res) => {  
     res.render('landing');
