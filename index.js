@@ -11,9 +11,9 @@ const knex = require('knex')({
 client: 'pg',
 connection: {
     host: process.env.RDS_HOSTNAME || 'localhost',
-    user: process.env.RDS_USERNAME || 'postgres',
+    user: process.env.RDS_USERNAME || 'test',
     password: process.env.RDS_PASSWORD || 'test',
-    database: process.env.RDS_DB_NAME || 'test',
+    database: process.env.RDS_DB_NAME || 'intex',
     port: process.env.RDS_PORT || 5432
 }
 });
@@ -42,8 +42,21 @@ app.get("/survey", (req, res) => {
 })
 
 app.post("/login", (req, res) => {
-    res.render('/landing')
-})
+    knex.select("username", "password").from('security').where({'username': req.body.user, "password": req.body.pass}).then( account => {
+        if (account.length)
+        {
+            res.render("/landing");
+        }
+        else
+        {
+            alert("Invaldi Credentials");
+            res.render("/login")
+
+        }
+    })
+  
+}); 
+
 
 app.use(express.urlencoded({extended:true}));
 
