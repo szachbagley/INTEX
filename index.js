@@ -27,7 +27,6 @@ connection: {
 }
 });
 
-
 app.get("/", (req, res) => {  
     res.render('landing');
 });
