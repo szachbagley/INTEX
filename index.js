@@ -61,7 +61,6 @@ app.post("/login", (req, res) => {
 }); 
 
 
-app.use(express.urlencoded({extended:true}));
 
 app.use(express.static(__dirname + '/public'));
 
