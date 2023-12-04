@@ -6,18 +6,18 @@ const fs = require('fs');
 
 let path = require('path');
 
-/* // this will set up the database
+
 const knex = require('knex')({
 client: 'pg',
 connection: {
-host: process.env.RDS_HOSTNAME || 'localhost',
-user: process.env.RDS_USERNAME || 'postgres',
-password: process.env.RDS_PASSWORD || 'admin',
-database: process.env.RDS_DB_NAME || 'bucket_list',
-port: process.env.RDS_PORT || 5432
+    host: process.env.RDS_HOSTNAME || 'localhost',
+    user: process.env.RDS_USERNAME || 'postgres',
+    password: process.env.RDS_PASSWORD || 'test',
+    database: process.env.RDS_DB_NAME || 'test',
+    port: process.env.RDS_PORT || 5432
 }
 });
-*/
+
 
 const port = process.env.PORT || 3000;
 
