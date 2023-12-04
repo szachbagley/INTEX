@@ -51,7 +51,7 @@ app.post("/login", (req, res) => {
     knex.select("username", "password").from('security').where({'username': req.body.user, "password": req.body.pass}).then( account => {
         if (account.length)
         {
-            res.render("/");
+            res.render("landing");
         }
         else
         {
