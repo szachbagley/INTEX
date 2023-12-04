@@ -40,6 +40,10 @@ app.get("/login", (req, res) => {
     res.render('login');
 });
 
+app.get("/addaccount", (req, res) => {      
+    res.render('addaccount');
+});
+
 app.get("/survey", (req, res) => {
     res.render('survey');
 })
@@ -48,7 +52,7 @@ app.post("/login", (req, res) => {
     knex.select("username", "password").from('security').where({'username': req.body.user, "password": req.body.pass}).then( account => {
         if (account.length)
         {
-            res.render("landing");
+            res.render("/");
         }
         else
         {
@@ -59,6 +63,17 @@ app.post("/login", (req, res) => {
     })
   
 }); 
+
+app.post('/adduser', (req, res) => {
+    knex("security").insert({
+        username: req.body.user,
+        password: req.body.pass
+        
+     }).then( newUser => {
+        res.redirect("/");
+     })
+});
+
 
 
 app.use(express.static(__dirname + '/public'));
