@@ -41,7 +41,6 @@ app.get("/survey", (req, res) => {
     res.render('survey');
 })
 
-
 app.use(express.urlencoded({extended:true}));
 
 app.use(express.static(__dirname + '/public'));

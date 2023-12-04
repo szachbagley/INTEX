@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mental Health Survey</title>
 </head>
 <body>
     <form action="formDataUpdate" method="POST">
@@ -39,6 +39,9 @@
             <select id="surveyGender" name="surveyGender">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
+                <option value="trans">Transgender</option>
+                <option value="nb">Non-binary</option>
+                <option value="other">Other</option>
             </select>
             <br><br>
             <label for="surveyRelStat">2. What is your relationship status?</label>
@@ -56,8 +59,14 @@
                 <option value="divorced">Divorced</option>
             </select>
             <br><br>
-            <label for="surveyAge">1. What is your age in years?</label>
-            <input type="text" id="surveyAge" name="surveyAge">
+            <label for="surveyOccStat">4. What is your occupation status?</label>
+            <select id="surveyOccStat" name="surveyOccStat">
+                <option value="uniStu">University Student</option>
+                <option value="schStu">School Student</option>
+                <option value="salaried">Salaried Employee</option>
+                <option value="unemployed">Unemployed</option>
+                <option value="retired">Retired</option>
+            </select>
             <br><br>
             <label for="surveyAge">1. What is your age in years?</label>
             <input type="text" id="surveyAge" name="surveyAge">
