@@ -41,6 +41,10 @@ app.get("/survey", (req, res) => {
     res.render('survey');
 })
 
+app.post("/login", (req, res) => {
+    res.render('/landing')
+})
+
 app.use(express.urlencoded({extended:true}));
 
 app.use(express.static(__dirname + '/public'));
