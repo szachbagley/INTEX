@@ -75,6 +75,49 @@ app.post('/adduser', (req, res) => {
      })
 });
 
+//this adds records to the database in pg admin
+app.post('/formDataUpdate', (req, res) => {
+    knex("main").insert({
+        timestamp:  moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'),
+        age: parseInt(req.body.surveyAge),
+        gender_id: parseInt(req.body.surveyGender),
+        relationship_status_id: parseInt(req.body.surveyRelStat),
+        occupation_status_id: parseInt(req.body.surveyOccStat),
+        university_affiliation: req.body.uniAff,
+        private_affiliation: req.body.privAff,
+        school_affiliation: req.body.schAff,
+        company_affiliation: req.body.comAff,
+        government_affiliation: req.body.govAff,
+        na_affiliation: req.body.noAff,
+        social_media_use: req.body.surveySocUse,
+        facebook_use: req.body.facebook,
+        twitter_use: req.body.twitter,
+        instagram_use: req.body.instagram,
+        youtube_use: req.body.youtube,
+        discord_use: req.body.discord,
+        reddit_use: req.body.reddit,
+        pinterest_use: req.body.pinterest,
+        tiktok_use: req.body.tiktok,
+        snapchat_use: req.body.snapchat,
+        average_time_id: parseInt(req.body.avgTime),
+        no_purpose_frequency: parseInt(req.body.surveyNoPurpose),
+        distracted_frequency: parseInt(req.body.surveyDistract),
+        resltess_feeling: parseInt(req.body.surveyRestless),
+        easily_distracted: parseInt(req.body.surveyEasyDistract),
+        bothered: parseInt(req.body.surveyBothered),
+        concentration_difficulty: parseInt(req.body.curveyConc),
+        comparison_frequency: parseInt(req.body.surveyComp),
+        comparison_feeling: parseInt(req.body.surveyCompFeel),
+        seek_validation_frequency: parseInt(req.body.surveyValid),
+        depressed_frequency: parseInt(req.body.surveyDepression),
+        daily_activity_fluctuate: parseInt(req.body.surveyInterest),
+        sleep_issues: parseInt(req.body.surveySleep),
+        city_id: parseInt(req.body.surveyCity)
+    }).then( newUser => {
+        res.redirect("completion");
+    })
+});
+
 
 
 app.use(express.static(__dirname + '/public'));
