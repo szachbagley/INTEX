@@ -24,7 +24,7 @@ connection: {
     password: process.env.RDS_PASSWORD || 'test',
     database: process.env.RDS_DB_NAME || 'intex',
     port: process.env.RDS_PORT || 5432,
-
+    ssl: process.env.DB_SSL ? {rejectUnauthorized: false} : false
 }
 });
 
