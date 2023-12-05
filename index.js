@@ -142,7 +142,13 @@ app.post('/formDataUpdate', (req, res) => {
 app.get('/report', (req, res) => {
     console.log(req.session.account);
     if (req.session.account) {
-        knex.select().from('main').then( allSurveys => {
+        knex.select().from('main')
+        .join('average_time', 'average_time_id', '=', 'average_time.average_time_id')
+        .join('city', 'city_id', '=', 'city.city_id')
+        .join('gender', 'gender_id', '=', 'gender.gender_id')
+        .join('occupation', 'occupation_status_id', '=', 'occupation.occupation_status_id')
+        .join('relationship', 'relationship_status_id', '=', 'relationship.relationship_status_id')
+        .then( allSurveys => {
             res.render('report', {mySurveys : allSurveys});
         });
     } else {
