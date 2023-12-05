@@ -156,7 +156,7 @@ app.get('/report', (req, res) => {
     }
   });
 
-  app.get('/filterReport', (req, res) => {
+  app.get('/filterReport/:entry_id_filter', (req, res) => {
     console.log(req.session.account);
     if (req.session.account) {
         knex.select().from('main')
@@ -165,7 +165,7 @@ app.get('/report', (req, res) => {
         .join('gender', 'main.gender_id', '=', 'gender.gender_id')
         .join('occupation', 'main.occupation_status_id', '=', 'occupation.occupation_status_id')
         .join('relationship', 'main.relationship_status_id', '=', 'relationship.relationship_status_id')
-        .where({'main.entry_id': req.body.entry_id_filter})
+        .where('main.entry_id', req.body.entry_id_filter)
         .then( allSurveys => {
             if (allSurveys.length) {
             res.render('report', {mySurveys : allSurveys})
