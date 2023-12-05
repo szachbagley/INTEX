@@ -17,16 +17,19 @@
             <a href="report">Report</a>
         </nav>
     </div>
-    <div class="loginBody">
-        <form action="/login" method="post" class="form-container">
-            <fieldset>
-                <legend>Login</legend>
-                <label for="user">Username</label>
-                <input type="text" id="user" name="user">
-                <br><br>
-                <label for="pass">Password</label>
-                <input type="password" id="pass" name="pass">
-                <button type="submit">login</button>
+    <div class="pageBody">
+        <form action="/login" method="post" class="loginForm">
+            <fieldset class="loginContainer">
+                <legend>Log In</legend>
+                <div style="width: 80%;">
+                    <label for="user" style="width: 45%;">Username</label>
+                    <input type="text" id="user" name="user" >
+                    <br><br>
+                    <label for="pass" style="width: 45%;">Password</label>
+                    <input type="password" id="pass" name="pass">
+                    <br><br>
+                    <button type="submit">login</button>
+                </div>
             </fieldset>
         </form>
     </div>

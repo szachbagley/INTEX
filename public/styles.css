@@ -6,8 +6,19 @@
     margin: 0;
 }
 
+.loginForm {
+    display: flex;
+    justify-content: center;
+    width: 100%
+}
+
 .loginContainer {
+    display: flex;
+    justify-content: center;
     margin: 4vw;
+    width: 20vw;
+    padding: 1vw;
+    text-align: left;
 }
   
   .subHead {
@@ -291,11 +302,31 @@
     border: 0.2vw solid #DB8C92;
     border-radius: 0;
     height: 0.4vw;
-    width: 6vw;
+    width: 10vw;
+    float: right;
+  }
+
+  input[type=password] {
+    box-sizing: border-box;
+    padding: 0.5vw;
+    background-color: white;
+    color: #DB8C92;
+    border: 0.2vw solid #DB8C92;
+    border-radius: 0;
+    height: 0.4vw;
+    width: 10vw;
     float: right;
   }
   
   input[type=text]:focus {
+    outline: none;
+    background-color: white;
+    color: #DB8C92;
+    border: 2px solid #DB8C92;
+    border-radius: 0;
+  }
+
+  input[type=password]:focus {
     outline: none;
     background-color: white;
     color: #DB8C92;

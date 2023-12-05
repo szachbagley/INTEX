@@ -18,16 +18,18 @@
         </nav>
     </div>
     <div class="pageBody">
-        <form action="/adduser" method="post" class="loginContainer">
-            <fieldset>
+        <form action="/adduser" method="post" class="loginForm">
+            <fieldset class="loginContainer">
                 <legend>Add User</legend>
-                <label for="user">Username</label>
-                <input type="text" id="user" name="user">
-                <br><br>
-                <label for="pass">Password</label>
-                <input type="password" id="pass" name="pass">
-                <br><br>
-                <button type="submit">login</button>
+                <div style="width: 80%;">
+                    <label for="user" style="width: 45%;">Username</label>
+                    <input type="text" id="user" name="user" >
+                    <br><br>
+                    <label for="pass" style="width: 45%;">Password</label>
+                    <input type="password" id="pass" name="pass">
+                    <br><br>
+                    <button type="submit">login</button>
+                </div>
             </fieldset>
         </form>
     </div>  
