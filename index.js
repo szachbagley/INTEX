@@ -17,8 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 
 const moment = require('moment');
 
-localStorage.setItem("loggedin", false);
-
 
 const knex = require('knex')({
 client: 'pg',
@@ -70,8 +68,7 @@ app.post("/login", (req, res) => {
 }); 
 
 app.post('/adduser', (req, res) => {
-    if (localStorage.getItem('loggedin'))
-    {
+    
         knex("security").insert({
             username: req.body.user,
             password: req.body.pass
@@ -79,12 +76,7 @@ app.post('/adduser', (req, res) => {
         }).then( newUser => {
             res.redirect("/");
         })
-    }
-    else
-    {
-        res.send("Need to sign in in order to access")
-        res.render("login");
-    }
+    
 });
 
 //this adds records to the database in pg admin
