@@ -12,7 +12,6 @@
      <thead style="background-color: cornflowerblue; color: white;">
        <tr>
          <th style="text-align: left;">entry_id</th>
-         <th style="text-align: left;">timestamp</th>
          <th style="text-align: left;">age</th>
          <th style="text-align: left;">gender_id</th>
          <th style="text-align: left;">relationship_status_id</th>
@@ -21,7 +20,7 @@
          <th style="text-align: left;">private_affiliation</th>
          <th style="text-align: left;">school_affiliation</th>
          <th style="text-align: left;">company_affiliation</th>
-         <th style="text-align: left;">Government_affiliation</th>
+         <th style="text-align: left;">government_affiliation</th>
          <th style="text-align: left;">na_affiliation</th>
          <th style="text-align: left;">social_media_use</th>
          <th style="text-align: left;">facebook_use</th>
@@ -47,16 +46,14 @@
          <th style="text-align: left;">daily_activity_fluctuate</th>
          <th style="text-align: left;">sleep_issues</th>
          <th style="text-align: left;">city_id</th>
-         <th></th>
-         <th></th>
        </tr>
      </thead>
      <tbody style="font-family: Arial; font-size: 9pt;">
       <% for (let iCount = 0; iCount < mySurveys.length; iCount++) { %>
          <tr>
            <td style="text-align: center;"><%= mySurveys[iCount].entry_id %></td>
-           <td style="text-align: center;"><%= mySurveys[iCount].timestamp %></td>
            <td style="text-align: center;"><%= mySurveys[iCount].age %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].gender_id %></td>
            <td style="text-align: center;"><%= mySurveys[iCount].relationship_status_id %></td>
            <td style="text-align: center;"><%= mySurveys[iCount].occupation_status_id %></td>
            <td style="text-align: center;"><%= mySurveys[iCount].university_affiliation %></td>
@@ -64,7 +61,6 @@
            <td style="text-align: center;"><%= mySurveys[iCount].school_affiliation %></td>
            <td style="text-align: center;"><%= mySurveys[iCount].company_affiliation %></td>
            <td style="text-align: center;"><%= mySurveys[iCount].government_affiliation %></td>
-
            <td style="text-align: center;"><%= mySurveys[iCount].na_affiliation %></td>
            <td style="text-align: center;"><%= mySurveys[iCount].social_media_use %></td>
            <td style="text-align: center;"><%= mySurveys[iCount].facebook_use %></td>
@@ -75,7 +71,6 @@
            <td style="text-align: center;"><%= mySurveys[iCount].reddit_use %></td>
            <td style="text-align: center;"><%= mySurveys[iCount].pinterest_use %></td>
            <td style="text-align: center;"><%= mySurveys[iCount].tiktok_use %></td>
-
            <td style="text-align: center;"><%= mySurveys[iCount].snapchat_use %></td>
            <td style="text-align: center;"><%= mySurveys[iCount].average_time_use %></td>
            <td style="text-align: center;"><%= mySurveys[iCount].no_purpose_frequency %></td>
@@ -86,7 +81,6 @@
            <td style="text-align: center;"><%= mySurveys[iCount].concentration_difficulty %></td>
            <td style="text-align: center;"><%= mySurveys[iCount].comparison_frequency %></td>
            <td style="text-align: center;"><%= mySurveys[iCount].comparison_feeling %></td>
-
            <td style="text-align: center;"><%= mySurveys[iCount].seek_validation_frequency %></td>
            <td style="text-align: center;"><%= mySurveys[iCount].depressed_frequency %></td>
            <td style="text-align: center;"><%= mySurveys[iCount].daily_activity_fluctuate %></td>
