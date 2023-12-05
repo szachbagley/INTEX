@@ -76,7 +76,7 @@
   }
   
   .head {
-    font-size: 7vw;
+    font-size: 4vw;
     font-family: "Montserrat", Arial, sans-serif;
     font-weight: 300;
     color: black;
@@ -214,7 +214,7 @@
     height: 4vw;
     margin-top: 1vw;
     margin-bottom: 1vw;
-    width:12%;
+    width:50%;
     text-align: left;
     display: inline-block;
     vertical-align: middle;
@@ -225,7 +225,7 @@
     margin-top: 2vw;
     margin-bottom: 2vw;
     height: 2vw;
-    width:88%;
+    width:50%;
     text-align: right;
     display: inline-block;
     font-size: 1.5vw;
