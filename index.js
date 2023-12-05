@@ -34,8 +34,8 @@ app.get("/", (req, res) => {
     res.render('landing');
 });
 
-app.get("/", (req, res) => {  
-    res.render('landing');
+app.get("/completion", (req, res) => {  
+    res.render('completion');
 });
 
 app.get("/finish", (req, res) => {  
@@ -122,7 +122,7 @@ app.post('/formDataUpdate', (req, res) => {
         sleep_issues: parseInt(req.body.surveySleep),
         city_id: parseInt(req.body.surveyCity)
     }).then( newUser => {
-        res.redirect("completion");
+        res.redirect("/completion");
     })
 });
 
