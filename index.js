@@ -34,7 +34,11 @@ app.get("/", (req, res) => {
     res.render('landing');
 });
 
-app.get("/landing", (req, res) => {  
+app.get("/", (req, res) => {  
+    res.render('landing');
+});
+
+app.get("/finish", (req, res) => {  
     res.render('landing');
 });
 
