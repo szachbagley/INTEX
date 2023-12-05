@@ -104,7 +104,7 @@ app.post('/formDataUpdate', (req, res) => {
         average_time_id: parseInt(req.body.avgTime),
         no_purpose_frequency: parseInt(req.body.surveyNoPurpose),
         distracted_frequency: parseInt(req.body.surveyDistract),
-        resltess_feeling: parseInt(req.body.surveyRestless),
+        restless_feeling: parseInt(req.body.surveyRestless),
         easily_distracted: parseInt(req.body.surveyEasyDistract),
         bothered: parseInt(req.body.surveyBothered),
         concentration_difficulty: parseInt(req.body.curveyConc),
