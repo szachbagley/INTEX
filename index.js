@@ -55,10 +55,8 @@ app.post("/login", (req, res) => {
         }
         else
         {
-            
-            res.render("login");
             alert("We couln't find your account. Please check that your username and password are typed correctly and that your account exists (only current users can create new user accounts).")
-
+            res.render("login");
         }
     })
   
