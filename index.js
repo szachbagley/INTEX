@@ -6,6 +6,8 @@ const fs = require('fs');
 
 let path = require('path');
 
+const session = require('express-session');
+
 const port = process.env.PORT || 3000;
 
 let app = express();
