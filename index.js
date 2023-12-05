@@ -117,7 +117,7 @@ app.post('/formDataUpdate', (req, res) => {
         restless_feeling: parseInt(req.body.surveyRestless),
         easily_distracted: parseInt(req.body.surveyEasyDistract),
         bothered: parseInt(req.body.surveyBothered),
-        concentration_difficulty: parseInt(req.body.curveyConc),
+        concentration_difficulty: parseInt(req.body.surveyConc),
         comparison_frequency: parseInt(req.body.surveyComp),
         comparison_feeling: parseInt(req.body.surveyCompFeel),
         seek_validation_frequency: parseInt(req.body.surveyValid),
