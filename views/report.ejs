@@ -18,6 +18,16 @@
     </nav>
 </div>
     <label><b>All Surveys:</b></label>
+    <div class="filterReportBody">
+      <form action="/filterReport" method="get" class="form-container">
+          <fieldset>
+              <legend>Filter</legend>
+              <label for="filterEntryID">User Number</label>
+              <input type="text" id="entry_id_filter" name="entry_id_filter">
+              <button type="submit">Filter</button>
+          </fieldset>
+      </form>
+  </div>
    <br><br>
    <table style="width: 100%; background-color: antiquewhite; border: 1px solid black;">
      <thead style="background-color: cornflowerblue; color: white;">

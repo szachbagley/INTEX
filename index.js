@@ -155,6 +155,25 @@ app.get('/report', (req, res) => {
       res.render('unauthorized');
     }
   });
+
+  app.get('/filterReport', (req, res) => {
+    console.log(req.session.account);
+    if (req.session.account) {
+        knex.select().from('main')
+        .join('average_time', 'main.average_time_id', '=', 'average_time.average_time_id')
+        .join('city', 'main.city_id', '=', 'city.city_id')
+        .join('gender', 'main.gender_id', '=', 'gender.gender_id')
+        .join('occupation', 'main.occupation_status_id', '=', 'occupation.occupation_status_id')
+        .join('relationship', 'main.relationship_status_id', '=', 'relationship.relationship_status_id')
+        .then( allSurveys => {
+            if (allSurveys.length) {
+            res.render('report', {mySurveys : allSurveys})
+            }
+        });
+    } else {
+      res.render('unauthorized');
+    }
+  });
   
 
 app.use(express.static(__dirname + '/public'));
