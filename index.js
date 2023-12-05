@@ -17,6 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 
 const moment = require('moment');
 
+localStorage.setItem("loggedin", false);
+
 
 const knex = require('knex')({
 client: 'pg',
@@ -55,11 +57,11 @@ app.post("/login", (req, res) => {
         if (account.length)
         {
             res.render("landing");
+            localStorage.setItem("loggedin", true);
         }
         else
         {
-            //"alert" doesn't work on the node app i guess
-            //alert("We couln't find your account. Please check that your username and password are typed correctly and that your account exists (only current users can create new user accounts).");
+            
             res.send("We couln't find your account. Please check that your username and password are typed correctly and that your account exists (only current users can create new user accounts).")
             res.render("login");
         }
@@ -68,13 +70,21 @@ app.post("/login", (req, res) => {
 }); 
 
 app.post('/adduser', (req, res) => {
-    knex("security").insert({
-        username: req.body.user,
-        password: req.body.pass
-        
-     }).then( newUser => {
-        res.redirect("/");
-     })
+    if (localStorage.getItem('loggedin'))
+    {
+        knex("security").insert({
+            username: req.body.user,
+            password: req.body.pass
+            
+        }).then( newUser => {
+            res.redirect("/");
+        })
+    }
+    else
+    {
+        res.send("Need to sign in in order to access")
+        res.render("login");
+    }
 });
 
 //this adds records to the database in pg admin
