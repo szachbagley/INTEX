@@ -14,6 +14,12 @@ let app = express();
 
 app.set('view engine', 'ejs');
 
+// Set up session middleware
+app.use(session({
+    secret: 'secret-intexfa23-key',
+    resave: false,
+    saveUninitialized: true
+  }));
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -66,13 +72,13 @@ app.post("/login", (req, res) => {
     knex.select("username", "password").from('security').where({'username': req.body.user, "password": req.body.pass}).then( account => {
         if (account.length)
         {
+            req.session.account = account;
+            console.log(account);
             res.render("landing");
-            localStorage.setItem("loggedin", true);
         }
         else
         {
-            
-            res.send("We couln't find your account. Please check that your username and password are typed correctly and that your account exists (only current users can create new user accounts).")
+            req.session.account = null;
             res.render("login");
         }
     })
@@ -134,7 +140,15 @@ app.post('/formDataUpdate', (req, res) => {
     })
 });
 
-
+// Set up /report route
+app.get('/report', (req, res) => {
+    console.log(req.session.account);
+    if (req.session.account) {
+      res.render('report');
+    } else {
+      res.render('unauthorized');
+    }
+  });
 
 app.use(express.static(__dirname + '/public'));
 
