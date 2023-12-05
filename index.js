@@ -39,6 +39,7 @@ connection: {
 });
 
 app.get("/", (req, res) => {  
+    console.log(req.session.account)
     res.render('landing');
 });
 
@@ -46,11 +47,7 @@ app.get("/completion", (req, res) => {
     res.render('completion');
 });
 
-app.get('/report', (req, res) => {
-    knex.select().from('main').then( allSurveys => {
-        res.render('report', {mySurveys : allSurveys})
-    })
-});
+
 
 app.get("/finish", (req, res) => {  
     res.render('landing');
@@ -73,12 +70,13 @@ app.post("/login", (req, res) => {
         if (account.length)
         {
             req.session.account = account;
-            console.log(account);
+            console.log(req.session.account);
             res.render("landing");
         }
         else
         {
             req.session.account = null;
+            console.log(req.session.account);
             res.render("login");
         }
     })
@@ -144,11 +142,14 @@ app.post('/formDataUpdate', (req, res) => {
 app.get('/report', (req, res) => {
     console.log(req.session.account);
     if (req.session.account) {
-      res.render('report');
+        knex.select().from('main').then( allSurveys => {
+            res.render('report', {mySurveys : allSurveys});
+        });
     } else {
       res.render('unauthorized');
     }
   });
+  
 
 app.use(express.static(__dirname + '/public'));
 
