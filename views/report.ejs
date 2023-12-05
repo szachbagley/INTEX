@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+</head>
+<body>
+    <label><b>All Surveys:</b></label>
+   <br><br>
+   <table style="width: 100%; background-color: antiquewhite; border: 1px solid black;">
+     <thead style="background-color: cornflowerblue; color: white;">
+       <tr>
+         <th style="text-align: left;">entry_id</th>
+         <th style="text-align: left;">timestamp</th>
+         <th style="text-align: left;">age</th>
+         <th style="text-align: left;">gender_id</th>
+         <th style="text-align: left;">relationship_status_id</th>
+         <th style="text-align: left;">occupation_status_id</th>
+         <th style="text-align: left;">university_affiliation</th>
+         <th style="text-align: left;">private_affiliation</th>
+         <th style="text-align: left;">school_affiliation</th>
+         <th style="text-align: left;">company_affiliation</th>
+         <th style="text-align: left;">Government_affiliation</th>
+         <th style="text-align: left;">na_affiliation</th>
+         <th style="text-align: left;">social_media_use</th>
+         <th style="text-align: left;">facebook_use</th>
+         <th style="text-align: left;">twitter_use</th>
+         <th style="text-align: left;">instagram_use</th>
+         <th style="text-align: left;">youtube_use</th>
+         <th style="text-align: left;">discord_use</th>
+         <th style="text-align: left;">reddit_use</th>
+         <th style="text-align: left;">pinterest_use</th>
+         <th style="text-align: left;">tiktok_use</th>
+         <th style="text-align: left;">snapchat_use</th>
+         <th style="text-align: left;">average_time_use</th>
+         <th style="text-align: left;">no_purpose_frequency</th>
+         <th style="text-align: left;">distracted_freqency</th>
+         <th style="text-align: left;">restless_feeling</th>
+         <th style="text-align: left;">easily_distracted</th>
+         <th style="text-align: left;">bothered</th>
+         <th style="text-align: left;">concentration_difficulty</th>
+         <th style="text-align: left;">comparison_frequency</th>
+         <th style="text-align: left;">comparison_feeling</th>
+         <th style="text-align: left;">seek_validation_frequency</th>
+         <th style="text-align: left;">depressed_frequency</th>
+         <th style="text-align: left;">daily_activity_fluctuate</th>
+         <th style="text-align: left;">sleep_issues</th>
+         <th style="text-align: left;">city_id</th>
+         <th></th>
+         <th></th>
+       </tr>
+     </thead>
+     <tbody style="font-family: Arial; font-size: 9pt;">
+      <% for (let iCount = 0; iCount < mySurveys.length; iCount++) { %>
+         <tr>
+           <td style="text-align: center;"><%= mySurveys[iCount].entry_id %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].timestamp %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].age %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].relationship_status_id %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].occupation_status_id %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].university_affiliation %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].private_affiliation %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].school_affiliation %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].company_affiliation %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].government_affiliation %></td>
+
+           <td style="text-align: center;"><%= mySurveys[iCount].na_affiliation %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].social_media_use %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].facebook_use %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].twitter_use %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].instagram_use %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].youtube_use %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].discord_use %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].reddit_use %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].pinterest_use %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].tiktok_use %></td>
+
+           <td style="text-align: center;"><%= mySurveys[iCount].snapchat_use %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].average_time_use %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].no_purpose_frequency %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].distracted_freqency %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].restless_feeling %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].easily_distracted %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].bothered %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].concentration_difficulty %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].comparison_frequency %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].comparison_feeling %></td>
+
+           <td style="text-align: center;"><%= mySurveys[iCount].seek_validation_frequency %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].depressed_frequency %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].daily_activity_fluctuate %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].sleep_issues %></td>
+           <td style="text-align: center;"><%= mySurveys[iCount].city_id %></td>          
+         </tr>
+      <% } %>
+     </tbody>
+   </table>
+</body>
+</html>

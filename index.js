@@ -40,6 +40,12 @@ app.get("/completion", (req, res) => {
     res.render('completion');
 });
 
+app.get('/report', (req, res) => {
+    knex.select().from('main').then( allSurveys => {
+        res.render('report', {mySurveys : allSurveys})
+    })
+});
+
 app.get("/finish", (req, res) => {  
     res.render('landing');
 });
