@@ -58,6 +58,7 @@ app.post("/login", (req, res) => {
         {
             //"alert" doesn't work on the node app i guess
             //alert("We couln't find your account. Please check that your username and password are typed correctly and that your account exists (only current users can create new user accounts).");
+            res.send("We couln't find your account. Please check that your username and password are typed correctly and that your account exists (only current users can create new user accounts).")
             res.render("login");
         }
     })
