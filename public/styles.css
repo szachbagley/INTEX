@@ -111,6 +111,7 @@ a{
   vertical-align: 50%;
   text-align: center;
 }
+
 .secHead {
   font-family: "Montserrat", Arial, sans-serif;
   color: rgb(255, 255, 255);
@@ -616,6 +617,7 @@ tr:nth-child(even) {
   margin: 0; /* Reset margin */
   
 }
+
 #intexBanner {
     margin-top: 4%;
     margin-bottom: 4.87%;
@@ -623,7 +625,6 @@ tr:nth-child(even) {
     font-family: "Montserrat", Arial, sans-serif;
     font-weight: 300;
     width:40%;
-
     text-align: center;
     color: black;
 }
@@ -643,6 +644,7 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #db7e86; /* Darker green on hover */
 }
+
 .intexBackgroundImg {
     width: 50%;
 }
