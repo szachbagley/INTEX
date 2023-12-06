@@ -1,3 +1,4 @@
+//all of these are importing express and other needed engines and setting up the basics to make routes work
 const express = require('express');
 
 const multer = require('multer');
@@ -8,13 +9,13 @@ let path = require('path');
 
 const session = require('express-session');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; //this works with aws and localhost
 
 let app = express();
 
 app.set('view engine', 'ejs');
 
-// Set up session middleware
+// Set up session middleware, this allows us to see if a user is logged in when they go to visit certain pages
 app.use(session({
     secret: 'secret-intexfa23-key',
     resave: false,
@@ -25,7 +26,8 @@ app.use(express.urlencoded({ extended: true }));
 
 const moment = require('moment');
 
-const knex = require('knex')({
+//This sets up the database to work both with RDS and with local postgres
+const knex = require('knex')({ 
 client: 'pg',
 connection: {
     host: process.env.RDS_HOSTNAME || 'localhost',
@@ -37,6 +39,7 @@ connection: {
 }
 });
 
+//This is the page that renders when the user first logs in
 app.get("/", (req, res) => {  
     res.render('landing');
 });
