@@ -20,7 +20,7 @@
     </div>
     <div class="pageBody">
         <form action="/formDataUpdate" method="POST">
-            <fieldset style="width: 0px;">
+            <fieldset style="width: 75%; margin: auto">
                 <!-- 
                     Survey Questions
                         1. Age
@@ -46,9 +46,11 @@
                 -->
                 <legend>Social Media Use Survey</legend>
                 <label for="surveyAge">1. What is your age in years?</label>
-                <input type="text" id="surveyAge" name="surveyAge">
+                <br>
+                <input type="text" id="surveyAge" name="surveyAge" style = "width: 100%;" maxlength = "3" size = '5'>
                 <br><br>
                 <label for="surveyGender">2. What is your gender?</label>
+                <br>
                 <select id="surveyGender" name="surveyGender">
                     <option value="1" >Male</option>
                     <option value="2">Female</option>
@@ -65,6 +67,7 @@
                     married
                     divorced
                 -->
+                <br>
                 <select id="surveyRelStat" name="surveyRelStat">
                     <option value="1">Single</option>
                     <option value="2">In a relationship</option>
@@ -73,6 +76,7 @@
                 </select>
                 <br><br>
                 <label for="surveyOccStat">4. What is your occupation status?</label>
+                <br>
                 <select id="surveyOccStat" name="surveyOccStat">
                     <option value="1">University Student</option>
                     <option value="2">School Student</option>
@@ -82,6 +86,7 @@
                 </select>
                 <br><br>
                 <label for="surveyOrgs">5. What type of organizations are you affiliated with?</label>
+                <br>
                 <fieldset id="surveyOrgs" name="surveyOrgs">
                     <input type="checkbox" id="uniAff" name="uniAff" value="Y">
                     <label for="uniAff">University</label>
@@ -104,12 +109,14 @@
                 </fieldset>
                 <br><br>
                 <label for="surveySocUse">6. Do you use social media?</label>
+                <br>
                 <select id="surveySocUse" name="surveySocUse">
                     <option value="Y">Yes</option>
                     <option value="N">No</option>
                 </select>
                 <br><br>
                 <label for="surveySocPlats">7. What social media platforms do you commonly use?</label>
+                <br>
                 <fieldset id="surveySocPlats" name="surveySocPlats">
                     <input type="checkbox" id="facebook" name="facebook" value="Y">
                     <label for="facebook">Facebook</label>
@@ -141,6 +148,7 @@
                 </fieldset>
                 <br><br>
                 <label for="surveyAvgTime">8. What is the average time you spend on social media every day?</label>
+                <br>
                 <fieldset id="surveyAvgTime" name="surveyAvgTime">
                     <input type="radio" name="avgTime" id="avgTime1" value="1">
                     <label for="avgTime1">Less than 1 hour</label>
@@ -163,6 +171,7 @@
                 </fieldset>
                 <br><br>
                 <label for="surveyNoPurpose">9. How often do you find yourself using social media without a specific purpose?</label>
+                <br>
                 <select id="surveyNoPurpose" name="surveyNoPurpose">
                     <option value="1">Rarely</option>
                     <option value="2">Occasionally</option>
@@ -172,6 +181,7 @@
                 </select>
                 <br><br>
                 <label for="surveyDistract">10. How often do you get distracted by social media when you are busy doing something?</label>
+                <br>
                 <select id="surveyDistract" name="surveyDistract">
                     <option value="1">Rarely</option>
                     <option value="2">Occasionally</option>
@@ -181,6 +191,7 @@
                 </select>
                 <br><br>
                 <label for="surveyRestless">11. Do you feel restless if you haven’t used social media in a while?</label>
+                <br>
                 <select id="surveyRestless" name="surveyRestless">
                     <option value="1">Not at all</option>
                     <option value="2">Slightly</option>
@@ -190,6 +201,7 @@
                 </select>
                 <br><br>
                 <label for="surveyEasyDistract">12. How easily distracted are you?</label>
+                <br>
                 <select id="surveyEasyDistract" name="surveyEasyDistract">
                     <option value="1">Not at all</option>
                     <option value="2">Slightly</option>
@@ -199,6 +211,7 @@
                 </select>
                 <br><br>
                 <label for="surveyBothered">13. How much are you bothered by worries?</label>
+                <br>
                 <select id="surveyBothered" name="surveyBothered">
                     <option value="1">Not at all</option>
                     <option value="2">Slightly</option>
@@ -208,6 +221,7 @@
                 </select>
                 <br><br>
                 <label for="surveyConc">14. Do you find it difficult to concentrate on things?</label>
+                <br>
                 <select id="surveyConc" name="surveyConc">
                     <option value="1">Not at all</option>
                     <option value="2">Slightly</option>
@@ -217,6 +231,7 @@
                 </select>
                 <br><br>
                 <label for="surveyComp">15. How often do you compare yourself to other successful people through the use of social media?</label>
+                <br>
                 <select id="surveyComp" name="surveyComp">
                     <option value="1">Rarely</option>
                     <option value="2">Occasionally</option>
@@ -226,6 +241,7 @@
                 </select>
                 <br><br>
                 <label for="surveyCompFeel">16. Following the previous question, how do you feel about these comparisons, generally speaking?</label>
+                <br>
                 <select id="surveyCompFeel" name="surveyCompFeel">
                     <option value="1">Very Poor</option>
                     <option value="2">Poor</option>
@@ -235,6 +251,7 @@
                 </select>
                 <br><br>
                 <label for="surveyValid">17. How often do you look to seek validation from features of social media?</label>
+                <br>
                 <select id="surveyValid" name="surveyValid">
                     <option value="1">Rarely</option>
                     <option value="2">Occasionally</option>
@@ -244,6 +261,7 @@
                 </select>
                 <br><br>
                 <label for="surveyDepression">18. How often do you feel depressed or down?</label>
+                <br>
                 <select id="surveyDepression" name="surveyDepression">
                     <option value="1">Rarely</option>
                     <option value="2">Occasionally</option>
@@ -253,6 +271,7 @@
                 </select>
                 <br><br>
                 <label for="surveyInterest">19. How frequently does your interest in daily activities fluctuate?</label>
+                <br>
                 <select id="surveyInterest" name="surveyInterest">
                     <option value="1">Rarely</option>
                     <option value="2">Occasionally</option>
@@ -262,6 +281,7 @@
                 </select>
                 <br><br>
                 <label for="surveySleep">20. How often do you face issues regarding sleep?</label>
+                <br>
                 <select id="surveySleep" name="surveySleep">
                     <option value="1">Rarely</option>
                     <option value="2">Occasionally</option>
@@ -271,6 +291,7 @@
                 </select>
                 <br><br>
                 <label for="surveyCity">21. Do you live in Provo?</label>
+                <br>
                 <select id="surveyCity" name="surveyCity">
                     <option value="2">Yes</option>
                     <option value="3">No</option>
