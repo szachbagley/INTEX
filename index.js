@@ -176,6 +176,18 @@ app.get('/report', (req, res) => {
             let parsed_age = parseInt(req.query.age_filter);
             queryBuilder = queryBuilder.where('main.age', parsed_age)
         }
+        if (req.query.gender_filter){
+            let parsed_gender = parseInt(req.query.gender_filter);
+            queryBuilder = queryBuilder.where('main.gender_id', parsed_gender)
+        }
+        if (req.query.rel_filter){
+            let parsed_rel = parseInt(req.query.rel_filter);
+            queryBuilder = queryBuilder.where('main.relationship_status_id', parsed_rel)
+        }
+        if (req.query.occ_filter){
+            let parsed_occ = parseInt(req.query.occ_filter);
+            queryBuilder = queryBuilder.where('main.occupation_status_id', parsed_occ)
+        }
         queryBuilder.then( allSurveys => {
             if (allSurveys.length) {
             res.render('report', {mySurveys : allSurveys});
