@@ -94,18 +94,10 @@ app.post("/login", (req, res) => {
 }); 
 
 app.get('/logged', (req, res) => {
-    res.render('loggedin');
+    res.send('<script>alert("Logged In!");</script>');
+    res.redirect('/');
   });
 
-  function waitForTwoSeconds() {
-    console.log('Waiting for 2 seconds...');
-    
-    setTimeout(function() {
-      console.log('Waited for 2 seconds!');
-      var form = document.getElementById('loggedForm');
-      form.submit();
-    }, 2000);
-  }
 
 app.post('/adduser', (req, res) => {
     
