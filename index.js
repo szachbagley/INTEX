@@ -44,76 +44,79 @@ app.get("/", (req, res) => {
     res.render('landing');
 });
 
+//this routes to the page when the survey is completed
 app.get("/completion", (req, res) => {  
     res.render('completion');
 });
 
+//this routes to the dashboard
 app.get("/dashboard", (req, res) => {  
     res.render('dashboard');
 });
 
-
-
-app.get("/finish", (req, res) => {  
-    res.render('landing');
-});
-
+//this routes to the login page
 app.get("/login", (req, res) => {      
     res.render('login');
 });
 
+//this routes to the resources page
 app.get("/resources", (req, res) => {      
     res.render('resources');
 });
 
+//this routes to the add an account page
 app.get("/addaccount", (req, res) => { 
-    if (req.session.account) {
+    if (req.session.account) { //this checks if the user has already logged on in this session
         res.render('addaccount');
     } else {
-      res.render('unauthorized');
+      res.render('unauthorized'); //if the user hasn't logged on then it will reoute them to an unauthorized page
     };     
 });
 
+//this routes to the survey page
 app.get("/survey", (req, res) => {
     res.render('survey');
 })
 
+//this route checks the logic of the login page
 app.post("/login", (req, res) => {
     knex.select("username", "password").from('security').where({'username': req.body.user, "password": req.body.pass}).then( account => {
-        if (account.length)
+        if (account.length) //this checks that the username and password matched the RDS table
         {
-            req.session.account = account;
+            req.session.account = account; //this creates a session so the report and add account can be accessed
             res.redirect("/");
          }
         else
         {
             req.session.account = null;
-            console.log(req.session.account);
-            res.render("incorrectuser");
+            res.render("incorrectuser"); //this renders a page saying it was an incorrect login
         }
     })
 }); 
 
+//this route allows a new user to be created
 app.post('/adduser', (req, res) => {
     
-        knex("security").insert({
+        knex("security").insert({ //this passes the info to a new record
             username: req.body.user,
             password: req.body.pass
             
         }).then( newUser => {
-            res.redirect("/");
+            res.redirect("/"); //after the record is created they are redirected to the home page
         })
-    
 });
 
-//this adds records to the database in pg admin
+//this adds records to the database in RDS
 app.post('/formDataUpdate', (req, res) => {
+//this goes line by line inserting data into the main database
+
     knex("main").insert({
-        timestamp:  moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'),
+        timestamp:  moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), //this is the format to insert date/time records
         age: parseInt(req.body.surveyAge),
         gender_id: parseInt(req.body.surveyGender),
         relationship_status_id: parseInt(req.body.surveyRelStat),
         occupation_status_id: parseInt(req.body.surveyOccStat),
+        //the logic for the following pages says if checked pass 'Y' and of not checked send 'N'
         university_affiliation: req.body.uniAff === 'Y' ? 'Y' : 'N',
         private_affiliation: req.body.privAff === 'Y' ? 'Y' : 'N',
         school_affiliation: req.body.schAff === 'Y' ? 'Y' : 'N',
@@ -145,14 +148,14 @@ app.post('/formDataUpdate', (req, res) => {
         sleep_issues: parseInt(req.body.surveySleep),
         city_id: parseInt(req.body.surveyCity)
     }).then( newUser => {
-        res.redirect("/completion");
+        res.redirect("/completion"); //once the survey is sent it sends the user to the completed page
     })
 });
 
-// Set up /report route
+//this route creates the report table without any filters
 app.get('/report', (req, res) => {
-    console.log(req.session.account);
-    if (req.session.account) {
+    if (req.session.account) {//this checks if the user is logged in
+        //this joins all of the tables together
         knex.select().from('main')
         .join('average_time', 'main.average_time_id', '=', 'average_time.average_time_id')
         .join('city', 'main.city_id', '=', 'city.city_id')
@@ -160,21 +163,23 @@ app.get('/report', (req, res) => {
         .join('occupation', 'main.occupation_status_id', '=', 'occupation.occupation_status_id')
         .join('relationship', 'main.relationship_status_id', '=', 'relationship.relationship_status_id')
         .then( allSurveys => {
-            res.render('report', {mySurveys : allSurveys});
+            res.render('report', {mySurveys : allSurveys}); //this returns all of the values to the report page where they dynamically load
         });
     } else {
-      res.render('unauthorized');
+      res.render('unauthorized'); //if they aren't logged in it gives a message
     }
   });
 
-  app.get('/filterReport', (req, res) => {
-    if (req.session.account) {
+//this route allows the report to be filtered on the report page
+app.get('/filterReport', (req, res) => {
+    if (req.session.account) { //this checks again if the user is logged in
         let queryBuilder = knex.select().from('main')
         .join('average_time', 'main.average_time_id', '=', 'average_time.average_time_id')
         .join('city', 'main.city_id', '=', 'city.city_id')
         .join('gender', 'main.gender_id', '=', 'gender.gender_id')
         .join('occupation', 'main.occupation_status_id', '=', 'occupation.occupation_status_id')
         .join('relationship', 'main.relationship_status_id', '=', 'relationship.relationship_status_id');
+        //these allow any number of the filters to be added into the query
         if (req.query.entry_id_filter){
             let parsed_entry_id = parseInt(req.query.entry_id_filter);
             queryBuilder = queryBuilder.where('main.entry_id', parsed_entry_id)
@@ -201,19 +206,19 @@ app.get('/report', (req, res) => {
                 queryBuilder = queryBuilder.where('main.occupation_status_id', parsed_occ)
             }
         }
+        //once all the filters are put in it sends the query to RDS
         queryBuilder.then( allSurveys => {
-            if (allSurveys.length) {
+            if (allSurveys.length) { //if any results return it sends them
             res.render('report', {mySurveys : allSurveys});
             }
             else {
-                res.render('nodata');
+                res.render('nodata'); //if no results match it sends a message
             }
         });
     } else {
-      res.render('unauthorized');
+        res.render('unauthorized'); //if not logged in it sends an issue
     }
-  });
-  
+});
 
 app.use(express.static(__dirname + '/public'));
 
