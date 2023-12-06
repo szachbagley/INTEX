@@ -318,6 +318,17 @@ input[type=text] {
   height: 0.4vw;
   width: 10vw;
 }
+
+input[type=number] {
+  box-sizing: border-box;
+  padding: 0.5vw;
+  background-color: white;
+  color: gray;
+  border: 0.1vw solid #DB8C92;
+  border-radius: 0;
+  height: 0.4vw;
+  width: 10vw;
+}
 /* Style for checkboxes */
 input[type="checkbox"] {
   box-sizing: border-box;
@@ -409,6 +420,14 @@ input[type=password] {
 }
 
 input[type=text]:focus {
+  outline: none;
+  background-color: white;
+  color: gray;
+  border: 2px solid #DB8C92;
+  border-radius: 0;
+}
+
+input[type=number]:focus {
   outline: none;
   background-color: white;
   color: gray;
