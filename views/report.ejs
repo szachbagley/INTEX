@@ -30,268 +30,325 @@
       </form>
   </div>
    <br><br>
-   <table style="width: 100%; background-color: antiquewhite; border: 1px solid black;">
-     <thead style="background-color: cornflowerblue; color: white;">
+   <table>
+     <thead>
        <tr>
-         <th style="text-align: left;">User Number</th>
-         <th style="text-align: left;">City</th>
-         <th style="text-align: left;">Age</th>
-         <th style="text-align: left;">Gender</th>
-         <th style="text-align: left;">Relationship Status</th>
-         <th style="text-align: left;">Occupation</th>
-         <th style="text-align: left;">University Affiliation</th>
-         <th style="text-align: left;">Private Affiliation</th>
-         <th style="text-align: left;">School Affiliation</th>
-         <th style="text-align: left;">Company Affiliation</th>
-         <th style="text-align: left;">Government Affiliation</th>
-         <th style="text-align: left;">N/A Affiliation</th>
-         <th style="text-align: left;">Uses Social Media</th>
-         <th style="text-align: left;">Uses Facebook</th>
-         <th style="text-align: left;">Uses Twitter/X</th>
-         <th style="text-align: left;">Uses Instagram</th>
-         <th style="text-align: left;">Uses Youtube</th>
-         <th style="text-align: left;">Uses Discord</th>
-         <th style="text-align: left;">Uses Reddit</th>
-         <th style="text-align: left;">Uses Pinterest</th>
-         <th style="text-align: left;">Uses TikTok</th>
-         <th style="text-align: left;">Uses Snapchat</th>
-         <th style="text-align: left;">Daily Usage</th>
-         <th style="text-align: left;">Feels Purposeless</th>
-         <th style="text-align: left;">Feels Distraced</th>
-         <th style="text-align: left;">Feels Restless</th>
-         <th style="text-align: left;">Easily Distracted</th>
-         <th style="text-align: left;">Bothered By Worries</th>
-         <th style="text-align: left;">Difficulty To Concentrate</th>
-         <th style="text-align: left;">Compares To Others</th>
-         <th style="text-align: left;">Comparison Feelings</th>
-         <th style="text-align: left;">Seeks Validation</th>
-         <th style="text-align: left;">Feels Depressed</th>
-         <th style="text-align: left;">Daily Activity Interest Fluctuates</th>
-         <th style="text-align: left;">Issues With Sleep</th>
+        <th>User Number</th>
+        <th>City</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Relationship Status</th>
+        <th>Occupation</th>
+        <th>University Affiliation</th>
+        <th>Private Affiliation</th>
+        <th>School Affiliation</th>
+        <th>Company Affiliation</th>
+        <th>Government Affiliation</th>
+        <th>N/A Affiliation</th>
+        <th>Uses Social Media</th>
+        <th>Uses Facebook</th>
+        <th>Uses Twitter/X</th>
+        <th>Uses Instagram</th>
+        <th>Uses Youtube</th>
+        <th>Uses Discord</th>
+        <th>Uses Reddit</th>
+        <th>Uses Pinterest</th>
+        <th>Uses TikTok</th>
+        <th>Uses Snapchat</th>
+        <th>Daily Usage</th>
+        <th>Feels Purposeless</th>
+        <th>Feels Distracted</th>
+        <th>Feels Restless</th>
+        <th>Easily Distracted</th>
+        <th>Bothered By Worries</th>
+        <th>Difficulty To Concentrate</th>
+        <th>Compares To Others</th>
+        <th>Comparison Feelings</th>
+        <th>Seeks Validation</th>
+        <th>Feels Depressed</th>
+        <th>Daily Activity Interest Fluctuates</th>
+        <th>Issues With Sleep</th>        
        </tr>
      </thead>
-     <tbody style="font-family: Arial; font-size: 9pt;">
+     <tbody>
       <% for (let iCount = 0; iCount < mySurveys.length; iCount++) { %>
          <tr>
-           <td style="text-align: center;"><%= mySurveys[iCount].entry_id %></td>
-           <td style="text-align: center;"><%= mySurveys[iCount].city %></td>
-           <td style="text-align: center;"><%= mySurveys[iCount].age %></td>
-           <td style="text-align: center;"><%= mySurveys[iCount].gender %></td>
-           <td style="text-align: center;"><%= mySurveys[iCount].relationship_status %></td>
-           <td style="text-align: center;"><%= mySurveys[iCount].occupation_status %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].university_affiliation == 'Y'){ %>
-            Yes
+          <td><%= mySurveys[iCount].entry_id %></td>
+          <td><%= mySurveys[iCount].city %></td>
+          <td><%= mySurveys[iCount].age %></td>
+          <td><%= mySurveys[iCount].gender %></td>
+          <td><%= mySurveys[iCount].relationship_status %></td>
+          <td><%= mySurveys[iCount].occupation_status %></td>
+          <td>
+            <% if(mySurveys[iCount].university_affiliation == 'Y'){ %>
+              Yes
             <% } else { %>
-            No
-            <%}%></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].private_affiliation == 'Y'){ %>
-            Yes
+              No
+            <%}%>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].private_affiliation == 'Y'){ %>
+              Yes
             <%} else { %>
-            No
-            <%} %></td>
-           <td style="text-align: center;"> <% if(mySurveys[iCount].school_affiliation == 'Y'){ %>
-            Yes
+              No
+            <%} %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].school_affiliation == 'Y'){ %>
+              Yes
             <%} else {%>
-            No
-            <%} %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].company_affiliation == 'Y'){ %>
-            Yes
+              No
+            <%} %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].company_affiliation == 'Y'){ %>
+              Yes
             <% } else { %>
-            No
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].government_affiliation == 'Y'){ %>
-            Yes
+              No
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].government_affiliation == 'Y'){ %>
+              Yes
             <% } else { %>
-            No
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].na_affiliation == 'Y'){ %>
-            Yes
+              No
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].na_affiliation == 'Y'){ %>
+              Yes
             <% } else { %>
-            No
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].social_media_use == 'Y'){ %>
-            Yes
+              No
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].social_media_use == 'Y'){ %>
+              Yes
             <%} else { %>
-            No
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].facebook_use == 'Y'){ %>
-            Yes
+              No
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].facebook_use == 'Y'){ %>
+              Yes
             <% } else { %>
-            No
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].twitter_use == 'Y'){ %>
-            Yes
+              No
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].twitter_use == 'Y'){ %>
+              Yes
             <% } else { %>
-            No
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].instagram_use == 'Y'){ %>
-            Yes
+              No
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].instagram_use == 'Y'){ %>
+              Yes
             <% } else { %>
-            No
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].youtube_use == 'Y'){ %>
-            Yes
+              No
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].youtube_use == 'Y'){ %>
+              Yes
             <% } else { %>
-            No
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].discord_use == 'Y'){ %>
-            Yes
+              No
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].discord_use == 'Y'){ %>
+              Yes
             <% } else { %>
-            No
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].reddit_use == 'Y'){ %>
-            Yes
+              No
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].reddit_use == 'Y'){ %>
+              Yes
             <% } else { %>
-            No
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].pinterest_use == 'Y'){ %>
-            Yes
+              No
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].pinterest_use == 'Y'){ %>
+              Yes
             <% } else { %>
-            No
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].tiktok_use == 'Y'){ %>
-            Yes
+              No
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].tiktok_use == 'Y'){ %>
+              Yes
             <% } else { %>
-            No
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].snapchat_use == 'Y'){ %>
-            Yes
+              No
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].snapchat_use == 'Y'){ %>
+              Yes
             <% } else { %>
-            No
-            <% } %></td>
-           <td style="text-align: center;"><%= mySurveys[iCount].average_time %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].no_purpose_frequency == 1){ %>
-            Rarely
+              No
+            <% } %>
+          </td>
+          <td><%= mySurveys[iCount].average_time %></td>
+          <td>
+            <% if(mySurveys[iCount].no_purpose_frequency == 1){ %>
+              Rarely
             <% } else if (mySurveys[iCount].no_purpose_frequency == 2){ %>
-            Occasionally
+              Occasionally
             <% } else if (mySurveys[iCount].no_purpose_frequency == 3){ %>
-            Sometimes
+              Sometimes
             <% } else if (mySurveys[iCount].no_purpose_frequency == 4){ %>
-            Frequently
+              Frequently
             <%} else { %>
-            Always
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].distracted_frequency == 1){ %>
-            Rarely
+              Always
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].distracted_frequency == 1){ %>
+              Rarely
             <% } else if (mySurveys[iCount].distracted_frequency == 2){ %>
-            Occasionally
+              Occasionally
             <% } else if (mySurveys[iCount].distracted_frequency == 3){ %>
-            Sometimes
+              Sometimes
             <%} else if (mySurveys[iCount].distracted_frequency == 4){ %>
-            Frequently
+              Frequently
             <%} else { %>
-            Always
-            <%} %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].restless_feeling == 1){ %>
-            Not At All
+              Always
+            <%} %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].restless_feeling == 1){ %>
+              Not At All
             <%} else if (mySurveys[iCount].restless_feeling == 2){ %>
-            Slightly
+              Slightly
             <% } else if (mySurveys[iCount].restless_feeling == 3){ %>
-            Moderately
+              Moderately
             <% } else if (mySurveys[iCount].restless_feeling == 4){ %>
-            Quite A Bit
+              Quite A Bit
             <%} else { %>
-            Extremely
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].easily_distracted == 1){ %>
-            Not At All
+              Extremely
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].easily_distracted == 1){ %>
+              Not At All
             <%} else if (mySurveys[iCount].easily_distracted == 2){%>
-            Slightly
+              Slightly
             <% } else if (mySurveys[iCount].easily_distracted == 3){ %>
-            Moderately
+              Moderately
             <%} else if (mySurveys[iCount].easily_distracted == 4){ %>
-            Quite A Bit
+              Quite A Bit
             <%} else { %>
-            Extremely
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].bothered == 1){ %>
-            Not At All
+              Extremely
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].bothered == 1){ %>
+              Not At All
             <%} else if (mySurveys[iCount].bothered == 2){ %>
-            Slightly
+              Slightly
             <%}else if (mySurveys[iCount].bothered == 3){ %>
-            Moderately
+              Moderately
             <%} else if (mySurveys[iCount].bothered == 4){ %>
-            Quite A Bit
+              Quite A Bit
             <%}else { %>
-            Extremely
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].concentration_difficulty == 1){ %>
-            Not At All
+              Extremely
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].concentration_difficulty == 1){ %>
+              Not At All
             <% } else if (mySurveys[iCount].concentration_difficulty == 2){ %>
-            Slightly
+              Slightly
             <% } else if (mySurveys[iCount].concentration_difficulty == 3){ %>
-            Moderately
+              Moderately
             <%} else if (mySurveys[iCount].concentration_difficulty == 4){ %>
-            Quite A Bit
+              Quite A Bit
             <%}else { %>
-            Extremely
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].comparison_frequency == 1){ %>
-            Rarely
+              Extremely
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].comparison_frequency == 1){ %>
+              Rarely
             <%} else if (mySurveys[iCount].comparison_frequency == 2){ %>
-            Occasionally
+              Occasionally
             <%}else if (mySurveys[iCount].comparison_frequency == 3){ %>
-            Sometimes
+              Sometimes
             <%}else if (mySurveys[iCount].comparison_frequency == 4){ %>
-            Frequently
+              Frequently
             <%} else { %>
-            Always
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].comparison_feeling == 1){ %>
-            Very Poor
+              Always
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].comparison_feeling == 1){ %>
+              Very Poor
             <%} else if (mySurveys[iCount].comparison_feeling == 2){%>
-            Poor
+              Poor
             <%} else if (mySurveys[iCount].comparison_feeling == 3){ %>
-            Neutral
+              Neutral
             <%} else if (mySurveys[iCount].comparison_feeling == 4){ %>
-            Good
+              Good
             <%} else { %>
-            Very Good
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].seek_validation_frequency == 1){ %>
-            Rarely
+              Very Good
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].seek_validation_frequency == 1){ %>
+              Rarely
             <%}else if (mySurveys[iCount].seek_validation_frequency == 2){ %>
-            Occasionally
+              Occasionally
             <% }else if (mySurveys[iCount].seek_validation_frequency == 3){ %>
-            Sometimes
+              Sometimes
             <% } else if (mySurveys[iCount].seek_validation_frequency == 4){ %>
-            Frequently
+              Frequently
             <% }else { %>
-            Always
-            <% } %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].depressed_frequency == 1){ %>
-            Rarely
+              Always
+            <% } %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].depressed_frequency == 1){ %>
+              Rarely
             <%} else if (mySurveys[iCount].depressed_frequency == 2){ %>
-            Occasionally
+              Occasionally
             <%}else if (mySurveys[iCount].depressed_frequency == 3){ %>
-            Sometimes
+              Sometimes
             <%}else if (mySurveys[iCount].depressed_frequency == 4){ %>
-            Frequently
+              Frequently
             <%}else {%>
-            Always
-            <%} %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].daily_activity_fluctuate == 1){ %>
-            Rarely
+              Always
+            <%} %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].daily_activity_fluctuate == 1){ %>
+              Rarely
             <%}else if (mySurveys[iCount].daily_activity_fluctuate == 2){ %>
-            Occasionally
+              Occasionally
             <%}else if (mySurveys[iCount].daily_activity_fluctuate == 3){ %>
-            Sometimes
+              Sometimes
             <%}else if (mySurveys[iCount].daily_activity_fluctuate == 4){ %>
-            Frequently
+              Frequently
             <%}else { %>
-            Always
-            <%} %></td>
-           <td style="text-align: center;"><% if(mySurveys[iCount].sleep_issues == 1){ %>
-            Rarely
+              Always
+            <%} %>
+          </td>
+          <td>
+            <% if(mySurveys[iCount].sleep_issues == 1){ %>
+              Rarely
             <%} else if (mySurveys[iCount].sleep_issues == 2){ %>
-            Occasionally
+              Occasionally
             <%}else if (mySurveys[iCount].sleep_issues == 3){ %>
-            Sometimes
+              Sometimes
             <%}else if (mySurveys[iCount].sleep_issues == 4){ %>
-            Frequently
+              Frequently
             <%}else { %>
-            Always
-            <%} %></td>          
+              Always
+            <%} %>
+          </td>
+                    
          </tr>
       <% } %>
      </tbody>
