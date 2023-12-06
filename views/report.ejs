@@ -64,7 +64,6 @@
    <br><br>
    <div class="tableContainer">
    <table>
-     <thead>
        <tr>
         <th>User Number</th>
         <th>City</th>
@@ -102,8 +101,6 @@
         <th>Daily Activity Interest Fluctuates</th>
         <th>Issues With Sleep</th>        
        </tr>
-     </thead>
-     <tbody>
       <% for (let iCount = 0; iCount < mySurveys.length; iCount++) { %>
          <tr>
           <td><%= mySurveys[iCount].entry_id %></td>
@@ -384,7 +381,6 @@
                     
          </tr>
       <% } %>
-     </tbody>
    </table>
   </div>
 </body>
