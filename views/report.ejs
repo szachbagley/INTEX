@@ -1,3 +1,4 @@
+<!--This page renders the report and connects to the RDS-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +20,7 @@
         <a href="resources">Resources</a>
     </nav>
 </div>
+<!--This form uses filters and sends the filters to the proper route-->
     <div class="filterReportBody">
       <form action="/filterReport" method="get" class="form-container">
         <h2 class="subSub alignLeft" style="margin: 1%;">Filters:</h2>
@@ -28,7 +30,7 @@
               <input type="number" id="age_filter" name="age_filter">
               <label for="filterGender">Gender</label>
               <select id="gender_filter" name="gender_filter">
-                <option value="" > </option>
+                <option value="" > </option> <!--This is a blank option with no value-->
                 <option value="1" >Male</option>
                 <option value="2">Female</option>
                 <option value="3">Non-binary</option>
@@ -53,6 +55,7 @@
                 <option value="5">Unemployed</option>
               </select>
               <button type="submit">Filter</button>
+              <!--This gets the form again without the filter-->
               <form action="/report" method="get" class="form-container">
                 <button type="submit">Reset</button>
               </form>
@@ -60,6 +63,7 @@
   </div>
    <br><br>
    <div class="tableContainer">
+    <!--This dynamically creates the entire report-->
    <table>
        <tr>
         <th>User Number</th>
@@ -374,8 +378,7 @@
             <%}else { %>
               Always
             <%} %>
-          </td>
-                    
+          </td>        
          </tr>
       <% } %>
    </table>
