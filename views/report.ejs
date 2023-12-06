@@ -19,11 +19,9 @@
         <a href="resources">Resources</a>
     </nav>
 </div>
-    <label><b>All Surveys:</b></label>
     <div class="filterReportBody">
       <form action="/filterReport" method="get" class="form-container">
-          <fieldset>
-              <legend>Filter</legend>
+        <h2 class="subSub alignLeft" style="margin: 1%;">Filters:</h2>
               <label for="filterEntryID">User Number</label>
               <input type="number" id="entry_id_filter" name="entry_id_filter" autofocus>
               <label for="filterAge">Age</label>
@@ -58,7 +56,6 @@
               <form action="/report" method="get" class="form-container">
                 <button type="submit">Reset</button>
               </form>
-          </fieldset>
       </form>
   </div>
    <br><br>
