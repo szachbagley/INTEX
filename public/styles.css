@@ -225,7 +225,7 @@ body{
   height: 4vw;
   margin-top: 1vw;
   margin-bottom: 1vw;
-  width:49%;
+  width:50%;
   text-align: left;
   display: inline-block;
   vertical-align: middle;
@@ -249,7 +249,7 @@ body{
   font-weight: 100;
 }
 .logo{
-  width: 50%;
+  width: 100%;
   display: inline-block;
   height: 3vw;
   font-size: 2vw;
