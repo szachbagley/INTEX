@@ -323,7 +323,7 @@ input[type=text] {
   color: gray;
   border: 0.1vw solid #DB8C92;
   border-radius: 0;
-  height: 12%;
+  height: 3.5vh;
   width: 10vw;
 }
 /* Style for checkboxes */
