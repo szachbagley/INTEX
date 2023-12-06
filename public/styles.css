@@ -562,7 +562,7 @@ form {
 }
 
 table{
-  width: 100%; 
+  width: 100vw; 
   background-color: white; 
   border: 2px solid black;
 }
@@ -684,8 +684,8 @@ input[type="submit"]:hover {
   font-family: "Montserrat", Arial, sans-serif;
   font-size: 40px; /* Adjust font size */
   position: absolute; /* Position the text absolutely on the image */
-  top: 25%; /* Adjust the vertical position from the top */
-  left: 50%; /* Adjust the horizontal position from the left */
+  top: 20vh; /* Adjust the vertical position from the top */
+  left: 50vw; /* Adjust the horizontal position from the left */
   transform: translate(-50%, -50%); /* Center the text using transform */
   text-align: center; /* Center-align the text */
   background-color: rgba(128, 128, 128, 0.65); /* Gray background with some transparency */
