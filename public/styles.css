@@ -417,3 +417,9 @@ td{
   background-color: #f1f1f1;
 }
 
+.formfieldset {
+  border: none; /* Remove the border */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+  padding: 20px; /* Add padding inside the fieldset if needed */
+  margin: 0; /* Reset margin */
+}
