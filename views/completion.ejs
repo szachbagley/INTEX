@@ -1,3 +1,4 @@
+<!--This page renders after someone has filled out a survey-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,13 +23,15 @@
     <div class="pageBody">
         <h1 class="head">Thank You For Taking Our Survey!</h1>
         <br>
+        <!--This form routes to the landing page-->
         <form action="/" method="get" class="form-container">
             <button type="submit" style="width: 100%;">Return To Homepage</button>
-    </form>
-    <br>
-    <form action="/dashboard" method="get" class="form-container">
-        <button type="submit" style="width: 100%;">View Dashboard</button>
-</form>
+        </form>
+        <br>
+        <!--This form routes to the dashboard-->
+        <form action="/dashboard" method="get" class="form-container">
+            <button type="submit" style="width: 100%;">View Dashboard</button>
+        </form>
     </div>
 </body>
 </html>
