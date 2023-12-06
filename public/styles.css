@@ -281,10 +281,15 @@ h4{
 }
 
 button {
-  background-color: white;
-  color: #DB8C92;
+  background-color: #DB8C92;
+  color: white;
   border: 2px solid #DB8C92;
   border-radius: 0;
+  width: 100%;
+  font-family: ;
+  height: 3vw;
+  font-size: 1vw;
+  font-family: "Montserrat", Arial, sans-serif;
 }
 
 button:hover {
@@ -292,6 +297,7 @@ button:hover {
   color: #DB8C92;
   border: 2px solid #DB8C92;
   border-radius: 0;
+  cursor: pointer;
 }
 
 input[type=text] {
@@ -307,6 +313,7 @@ input[type=text] {
 
 .usernameBox {
     float: right;
+    height: 3vw;
 }
 
 input[type=password] {
