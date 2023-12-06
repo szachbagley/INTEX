@@ -25,6 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const moment = require('moment');
 
+let loggedin;
 
 const knex = require('knex')({
 client: 'pg',
@@ -81,6 +82,7 @@ app.post("/login", (req, res) => {
         if (account.length)
         {
             req.session.account = account;
+            loggedin = account;
             res.redirect("/");
          }
         else
