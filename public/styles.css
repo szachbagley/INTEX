@@ -560,8 +560,8 @@ table{
 }
 
 th{
-  background-color: antiquewhite;
-  color: gray;
+  background-color: #222222;
+  color: white;
   text-align: center;
   font-family: "Montserrat", Arial, sans-serif;
   font-size: 15px;
