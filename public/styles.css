@@ -560,20 +560,21 @@ table{
 }
 
 th{
-  background-color: #DB8C92;
+  background-color: antiquewhite;
   color: gray;
   text-align: center;
   font-family: "Montserrat", Arial, sans-serif;
-  font-size: 12px;
-  border-bottom: 1px solid black;
-  padding: 3px;
+  font-size: 15px;
+  border-bottom: 1px solid #DB8C92;
+  padding: 4px;
+  font-weight: normal;
 }
 
 td{
   text-align: center;
   font-family: "Montserrat", Arial, sans-serif;
   font-size: 9px;
-  padding: 3px;
+  padding: 4px;
 }
 
 tr:nth-child(even) {
