@@ -604,13 +604,13 @@ td{
   
 }
 #intexBanner {
-    margin-top: 12vw;
+    margin-top: 4%;
+    margin-bottom: 4.87%;
     font-size: 4vw;
     font-family: "Montserrat", Arial, sans-serif;
     font-weight: 300;
-    width:49%;
-    float:left;
-    vertical-align: 50%;
+    width:40%;
+
     text-align: center;
     color: black;
 }
@@ -630,12 +630,15 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #db7e86; /* Darker green on hover */
 }
-#intexBackgroundImg {
-    display: flex; 
-    justify-content: center; 
-    width: 49%;
-    float: right;
+.intexBackgroundImg {
+    width: 50%;
 }
+
+#landingWelcome {
+    width: 100%;
+    margin-bottom: 10%;
+}
+
 
 input[type="submit"] {
   background-color: #DB8C92; /* Green background color */
