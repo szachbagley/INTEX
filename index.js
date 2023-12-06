@@ -81,14 +81,8 @@ app.post("/login", (req, res) => {
         if (account.length)
         {
             req.session.account = account;
-            console.log(req.session.account);
-            res.render("loggedin", login => {
-                setTimeout( time => {
-                    res.redirect("/");
-                }, 2000);
-            });
-            
-                    }
+            res.redirect("/logged");
+         }
         else
         {
             req.session.account = null;
@@ -98,6 +92,13 @@ app.post("/login", (req, res) => {
     })
   
 }); 
+
+app.get('/logged', (req, res) => {
+    res.render('loggedin')
+    setTimeout(() => {
+      res.redirect('/');
+    }, 5000);
+  });
 
 app.post('/adduser', (req, res) => {
     
