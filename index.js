@@ -161,20 +161,22 @@ app.get('/report', (req, res) => {
   });
 
   app.get('/filterReport', (req, res) => {
-    console.log(req.session.account);
     if (req.session.account) {
-        let parsedNum = req.query.entry_id_filter;
-        parsedNum = parseInt(parsedNum);
-        console.log(parsedNum);
-        console.log(req.params.entry_id_filter)
-        knex.select().from('main')
+        let queryBuilder = knex.select().from('main')
         .join('average_time', 'main.average_time_id', '=', 'average_time.average_time_id')
         .join('city', 'main.city_id', '=', 'city.city_id')
         .join('gender', 'main.gender_id', '=', 'gender.gender_id')
         .join('occupation', 'main.occupation_status_id', '=', 'occupation.occupation_status_id')
-        .join('relationship', 'main.relationship_status_id', '=', 'relationship.relationship_status_id')
-        .where('main.entry_id', parsedNum)
-        .then( allSurveys => {
+        .join('relationship', 'main.relationship_status_id', '=', 'relationship.relationship_status_id');
+        if (req.query.entry_id_filter){
+            let parsed_entry_id = parsedInt(req.query.entry_id_filter);
+            queryBuilder = queryBuilder.where('main.entry_id', parsed_entry_id)
+        }
+        if (req.query.age_filter){
+            let parsed_age = parsedInt(req.query.age_filter);
+            queryBuilder = queryBuilder.where('main.age', parsed_age)
+        }
+        queryBuilder.then( allSurveys => {
             if (allSurveys.length) {
             res.render('report', {mySurveys : allSurveys});
             }
