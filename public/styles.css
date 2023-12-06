@@ -560,12 +560,12 @@ table{
 }
 
 th{
-  background-color: #222222;
+  background-color: #333333;
   color: white;
   text-align: center;
   font-family: "Montserrat", Arial, sans-serif;
   font-size: 15px;
-  border-bottom: 1px solid #DB8C92;
+  border-bottom: 3px solid #DB8C92;
   padding: 4px;
   font-weight: normal;
 }
