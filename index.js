@@ -160,7 +160,7 @@ app.get('/report', (req, res) => {
     }
   });
 
-  app.get('/report/:entry_id_filter', (req, res) => {
+  app.get('/filterReport/:entry_id_filter', (req, res) => {
     console.log(req.session.account);
     if (req.session.account) {
         let parsedNum = req.params.entry_id_filter;
