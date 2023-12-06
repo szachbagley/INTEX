@@ -81,7 +81,7 @@ app.post("/login", (req, res) => {
         {
             req.session.account = null;
             console.log(req.session.account);
-            res.render("login");
+            res.render("unauthorized");
         }
     })
   
