@@ -555,24 +555,27 @@ form {
 
 table{
   width: 100%; 
-  background-color: antiquewhite; 
+  background-color: white; 
   border: 1px solid black;
 }
 
 thead{
-  background-color: cornflowerblue;
-  color: white;
+  background-color: white;
+  color: gray;
+  border: 2px solid #DB8C92;
 }
 th{
-  text-align: left;
+  text-align: center;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 12px;
 }
 
 tbody{
-  font-family: Arial;
-  font-size: 9pt;
+  font-size: 9px;
 }
 td{
   text-align: center;
+  font-family: "Montserrat", Arial, sans-serif;
 }
 
 .tableContainer{
