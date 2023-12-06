@@ -83,9 +83,9 @@ app.post("/login", (req, res) => {
         {
             req.session.account = account;
             console.log(req.session.account);
-            res.render("loggedin", () => {
-                setTimeout(() => {
-                    res.render('landing');
+            res.render("loggedin", login => {
+                setTimeout( time => {
+                    res.redirect("/");
                   }, 2000);
             });
             
