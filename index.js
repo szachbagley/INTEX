@@ -47,6 +47,10 @@ app.get("/completion", (req, res) => {
     res.render('completion');
 });
 
+app.get("/dashboard", (req, res) => {  
+    res.render('dashboard');
+});
+
 
 
 app.get("/finish", (req, res) => {  
