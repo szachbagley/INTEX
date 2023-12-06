@@ -536,11 +536,11 @@ td{
     font-size: 4vw;
     font-family: "Montserrat", Arial, sans-serif;
     font-weight: 300;
-    padding: 2vw;
-    vertical-align: 75%;
+    width:49%;
+    float:left;
+    vertical-align: 50%;
     text-align: center;
-    color: white;
-    text-shadow: 0.25vw 0.25vw 0.25vw black;
+    color: black;
 }
 
 input[type="submit"] {
@@ -561,11 +561,6 @@ input[type="submit"]:hover {
 #intexBackgroundImg {
     display: flex; 
     justify-content: center; 
-    padding-bottom: 15%; 
-    background-image: url(homePage.png); 
-    padding-left: 25%; 
-    height:65%;
-    padding-right: 25%;
-    background-repeat: no-repeat;
-    background-size: cover;
+    width: 49%;
+    float: right;
 }
