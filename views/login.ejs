@@ -20,9 +20,9 @@
         </nav>
     </div>
     <div class="pageBody homeBodyText">
-        <% if (account.username) { %>
+        <% if (account) { %>
             <div class="loggedInMessage">
-              Welcome, <%= account.username %>! You are now logged in.
+              Welcome! You are currently logged in.
             </div>
           <% } %>
         <form action="/login" method="post" class="loginForm">
