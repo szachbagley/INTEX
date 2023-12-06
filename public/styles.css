@@ -218,11 +218,11 @@ ol{
   font-weight: 300
 }
 
-.juniorPic{
+.resback{
   padding-top: 9.25vw;
   padding-bottom: 9.25vw;
   color: #fff;
-  /*background-image: url("../assets/img/51C0AEA2-90D5-4EDA-BC3C-C29B5941F6C9.JPG");*/
+  background-image: url("mountain2.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -651,4 +651,27 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #db7e86; /* Darker green on hover */
+}
+
+.resBodyText {
+  color: gray;
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  margin-top: 4vw;
+  margin-bottom: 5vw;
+}
+
+.greenMountainText {
+  color: white; /* Set text color */
+  font-weight: normal;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 40px; /* Adjust font size */
+  position: absolute; /* Position the text absolutely on the image */
+  top: 25%; /* Adjust the vertical position from the top */
+  left: 50%; /* Adjust the horizontal position from the left */
+  transform: translate(-50%, -50%); /* Center the text using transform */
+  text-align: center; /* Center-align the text */
+  background-color: rgba(128, 128, 128, 0.65); /* Gray background with some transparency */
+  padding: 20px; /* Add padding for better readability */
 }
