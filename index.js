@@ -169,11 +169,11 @@ app.get('/report', (req, res) => {
         .join('occupation', 'main.occupation_status_id', '=', 'occupation.occupation_status_id')
         .join('relationship', 'main.relationship_status_id', '=', 'relationship.relationship_status_id');
         if (req.query.entry_id_filter){
-            let parsed_entry_id = parsedInt(req.query.entry_id_filter);
+            let parsed_entry_id = parseInt(req.query.entry_id_filter);
             queryBuilder = queryBuilder.where('main.entry_id', parsed_entry_id)
         }
         if (req.query.age_filter){
-            let parsed_age = parsedInt(req.query.age_filter);
+            let parsed_age = parseInt(req.query.age_filter);
             queryBuilder = queryBuilder.where('main.age', parsed_age)
         }
         queryBuilder.then( allSurveys => {
