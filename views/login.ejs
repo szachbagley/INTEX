@@ -20,6 +20,11 @@
         </nav>
     </div>
     <div class="pageBody homeBodyText">
+        <% if (account.username) { %>
+            <div class="loggedInMessage">
+              Welcome, <%= account.username %>! You are now logged in.
+            </div>
+          <% } %>
         <form action="/login" method="post" class="loginForm">
             <fieldset class="loginContainer">
                 <div style="width: 80%;">

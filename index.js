@@ -81,7 +81,7 @@ app.post("/login", (req, res) => {
         if (account.length)
         {
             req.session.account = account;
-            res.redirect("/logged");
+            res.redirect("/");
          }
         else
         {
@@ -90,14 +90,7 @@ app.post("/login", (req, res) => {
             res.render("incorrectuser");
         }
     })
-  
 }); 
-
-app.get('/logged', (req, res) => {
-    res.send('<script>alert("Logged In!");</script>');
-    res.redirect('/');
-  });
-
 
 app.post('/adduser', (req, res) => {
     
