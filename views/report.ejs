@@ -20,11 +20,11 @@
 </div>
     <label><b>All Surveys:</b></label>
     <div class="filterReportBody">
-      <form action="/report/entry_id_filter" method="get" class="form-container">
+      <form action="/report/<%=entry_id_filter.value%>" method="get" class="form-container">
           <fieldset>
               <legend>Filter</legend>
               <label for="filterEntryID">User Number</label>
-              <input type="text" id="entry_id_filter" name="entry_id_filter">
+              <input type="number" id="entry_id_filter" name="entry_id_filter">
               <button type="submit">Filter</button>
           </fieldset>
       </form>
