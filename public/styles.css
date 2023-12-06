@@ -387,3 +387,9 @@ tbody{
 td{
   text-align: center;
 }
+
+.tableContainer{
+  overflow-x: auto;
+  overflow-y: auto;
+  width: 50%;
+}
