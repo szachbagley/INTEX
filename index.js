@@ -165,6 +165,8 @@ app.get('/report', (req, res) => {
     if (req.session.account) {
         let parsedNum = req.params.entry_id_filter;
         parsedNum = parseInt(parsedNum);
+        console.log(parsedNum);
+        console.log(req.params.entry_id_filter)
         knex.select().from('main')
         .join('average_time', 'main.average_time_id', '=', 'average_time.average_time_id')
         .join('city', 'main.city_id', '=', 'city.city_id')
