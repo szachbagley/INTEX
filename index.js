@@ -39,7 +39,6 @@ connection: {
 });
 
 app.get("/", (req, res) => {  
-    console.log(req.session.account)
     res.render('landing');
 });
 
@@ -86,10 +85,10 @@ app.post("/login", (req, res) => {
             res.render("loggedin", login => {
                 setTimeout( time => {
                     res.redirect("/");
-                  }, 2000);
+                }, 2000);
             });
             
-        }
+                    }
         else
         {
             req.session.account = null;
