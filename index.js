@@ -79,10 +79,12 @@ app.post("/login", (req, res) => {
         {
             req.session.account = account;
             console.log(req.session.account);
-            res.render("loggedin");
-            setTimeout(() => {
-                res.render('landing');
-              }, 2000);
+            res.render("loggedin", () => {
+                setTimeout(() => {
+                    res.render('landing');
+                  }, 2000);
+            });
+            
         }
         else
         {
