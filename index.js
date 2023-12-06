@@ -61,6 +61,10 @@ app.get("/login", (req, res) => {
     res.render('login');
 });
 
+app.get("/resources", (req, res) => {      
+    res.render('resources');
+});
+
 app.get("/addaccount", (req, res) => { 
     if (req.session.account) {
         res.render('addaccount');
