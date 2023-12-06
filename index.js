@@ -33,7 +33,7 @@ connection: {
     user: process.env.RDS_USERNAME || 'test',
     password: process.env.RDS_PASSWORD || 'test',
     database: process.env.RDS_DB_NAME || 'intex',
-    port: process.env.RDS_PORT || 5432 || 5433,
+    port: process.env.RDS_PORT || 5432,
     ssl: process.env.DB_SSL ? {rejectUnauthorized: false} : false
 }
 });
@@ -79,7 +79,10 @@ app.post("/login", (req, res) => {
         {
             req.session.account = account;
             console.log(req.session.account);
-            res.render("landing");
+            res.render("loggedin");
+            setTimeout(() => {
+                res.render('landing');
+              }, 2000);
         }
         else
         {
