@@ -225,7 +225,7 @@ body{
   height: 4vw;
   margin-top: 1vw;
   margin-bottom: 1vw;
-  width:50%;
+  width:49%;
   text-align: left;
   display: inline-block;
   vertical-align: middle;
@@ -413,6 +413,7 @@ td{
   background-color: #f1f1f1;
 }
 
+<<<<<<< Updated upstream
 .table-container::-webkit-scrollbar-vertical {
   width: 12px;
 }
@@ -424,3 +425,5 @@ td{
 .table-container::-webkit-scrollbar-track-vertical {
   background-color: #f1f1f1;
 }
+=======
+>>>>>>> Stashed changes
