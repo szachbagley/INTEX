@@ -305,12 +305,84 @@ input[type=text] {
   box-sizing: border-box;
   padding: 0.5vw;
   background-color: white;
-  color: #DB8C92;
-  border: 0.2vw solid #DB8C92;
+  color: gray;
+  border: 0.1vw solid #DB8C92;
   border-radius: 0;
   height: 0.4vw;
   width: 10vw;
 }
+/* Style for checkboxes */
+input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0.4vw; /* Adjust padding as needed */
+  border: 0.1vw solid #DB8C92;
+  border-radius: 0.2vw; /* Adjust border-radius for rounded corners */
+  width: 1vw; /* Adjust the width as needed */
+  height: 1vw; /* Adjust the height as needed */
+  appearance: none; /* Remove default appearance */
+  outline: none;
+  position: relative;
+  vertical-align: middle; /* Align checkboxes to the middle */
+}
+
+/* Style for checked checkboxes */
+input[type="checkbox"]:checked {
+  background-color: #DB8C92; /* Change to the desired color */
+  border-color: #DB8C92; /* Change to the desired color */
+}
+
+/* Style for checkmark in checked state */
+input[type="checkbox"]:checked::before {
+  content: '\2713'; /* Checkmark character */
+  color: white; /* Change to the desired color */
+  display: block;
+  text-align: center;
+  line-height: 1vw; /* Adjust line-height for proper vertical alignment */
+  font-size: 0.8vw; /* Adjust font-size for checkmark size */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Style for radio buttons */
+input[type="radio"] {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  border: 0.1vw solid #DB8C92;
+  border-radius: 50%; /* Make it circular */
+  width: 1vw; /* Adjust width as needed */
+  height: 1vw; /* Adjust height as needed */
+  vertical-align: middle;
+}
+
+/* Style for checked radio buttons */
+input[type="radio"]:checked {
+  background-color: #DB8C92;
+}
+
+
+select {
+  box-sizing: border-box;
+  background-color: white;
+  color: gray;
+  border: 0.1vw solid #DB8C92;
+  border-radius: 0;
+  height: 1.5vw; /* Adjust the height as needed */
+  width: 10vw;
+  font-size: .8vw; /* Adjust the font size as needed */
+}
+
+select option:checked {
+  color: #DB8C92; /* Change to the desired color */
+}
+
+select option {
+  font-size: 0.8vw; /* Adjust the font size as needed */
+}
+
 
 .usernameBox {
     float: right;
@@ -332,9 +404,18 @@ input[type=password] {
 input[type=text]:focus {
   outline: none;
   background-color: white;
-  color: #DB8C92;
+  color: gray;
   border: 2px solid #DB8C92;
   border-radius: 0;
+}
+
+select:focus {
+  outline: none;
+  background-color: white;
+  color: gray;
+  border: 2px solid #DB8C92;
+  border-radius: 0;
+  font-size: 0.8vw;
 }
 
 input[type=password]:focus {
@@ -422,6 +503,7 @@ td{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
   padding: 20px; /* Add padding inside the fieldset if needed */
   margin: 0; /* Reset margin */
+  
 }
 #intexBanner {
     margin-top: 12vw;
@@ -433,4 +515,20 @@ td{
     text-align: center;
     color: white;
     text-shadow: 0.25vw 0.25vw 0.25vw black;
+}
+
+input[type="submit"] {
+  background-color: #DB8C92; /* Green background color */
+  color: white; /* White text color */
+  padding: 10px 20px; /* Padding around the text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor on hover */
+  font-size: 12px; /* Font size */
+  font-weight: bold; /* Bold text */
+  
+}
+
+input[type="submit"]:hover {
+  background-color: #db7e86; /* Darker green on hover */
 }
