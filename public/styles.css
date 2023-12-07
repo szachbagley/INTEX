@@ -577,6 +577,9 @@ font-family: "Montserrat", Arial, sans-serif;
 font-size: 15px;
 padding: 4px;
 font-weight: normal;
+position: sticky;
+top: 0; /* Stick the header to the top of the container */
+z-index: 1;
 }
 
 td{
