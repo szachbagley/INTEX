@@ -79,32 +79,68 @@ app.get("/survey", (req, res) => {
 })
 
 //this route checks the logic of the login page
-app.post("/login", (req, res) => {
-    knex.select("username", "password").from('security').where({'username': req.body.user, "password": req.body.pass}).then( account => {
-        if (account.length) //this checks that the username and password matched the RDS table
-        {
-            req.session.account = account; //this creates a session so the report and add account can be accessed
-            res.redirect("/");
-         }
-        else
-        {
-            req.session.account = null;
-            res.render("incorrectuser"); //this renders a page saying it was an incorrect login
-        }
-    })
-}); 
+const crypto = require('crypto');
+const bcrypt = require('bcrypt');
 
-//this route allows a new user to be created
-app.post('/adduser', (req, res) => {
-    
-        knex("security").insert({ //this passes the info to a new record
-            username: req.body.user,
-            password: req.body.pass
-            
-        }).then( newUser => {
-            res.redirect("/"); //after the record is created they are redirected to the home page
-        })
+
+
+// Hash function using crypto module
+function hashPassword(password) {
+  const hash = crypto.createHash('sha256').update(password).digest('hex');
+  return hash;
+}
+
+// Route for user login
+app.post("/login", (req, res) => {
+  const enteredPassword = req.body.pass;
+
+  knex.select("username", "password").from('security').where({'username': req.body.user}).then(account => {
+    if (account.length) {
+      const storedPasswordHash = account[0].password;
+
+      // Compare entered password with stored hashed password using bcrypt
+      bcrypt.compare(enteredPassword, storedPasswordHash, (err, result) => {
+        if (result) {
+          req.session.account = account;
+          res.redirect("/");
+        } else {
+          req.session.account = null;
+          res.render("incorrectuser");
+        }
+      });
+    } else {
+      req.session.account = null;
+      res.render("incorrectuser");
+    }
+  });
 });
+
+// Route for adding a new user
+app.post('/adduser', (req, res) => {
+  const username = req.body.user;
+  const password = req.body.pass;
+
+  // Hash the password using bcrypt
+  bcrypt.hash(password, 10, (err, hashedPassword) => {
+    if (err) {
+      console.error('Error hashing password:', err);
+      res.status(500).send('Internal Server Error');
+      return;
+    }
+
+    // Insert the user with the hashed password
+    knex("security").insert({
+      username: username,
+      password: hashedPassword
+    }).then(newUser => {
+      res.redirect("/");
+    }).catch(error => {
+      console.error('Error inserting new user:', error);
+      res.status(500).send('Internal Server Error');
+    });
+  });
+});
+
 
 //this adds records to the database in RDS
 app.post('/formDataUpdate', (req, res) => {
