@@ -1,3 +1,7 @@
+//Group 3-5
+//Authors: Nate Shaw, Zack Bagley, Caleb Gooch, Eli Baker
+
+
 //all of these are importing express and other needed engines and setting up the basics to make routes work
 const express = require('express');
 
