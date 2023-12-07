@@ -580,7 +580,7 @@ font-family: "Montserrat", Arial, sans-serif;
 font-size: 15px;
 padding: 4px;
 font-weight: normal;
-position: fixed;
+position: sticky;
 top: 0; 
 z-index: 1;
 }
