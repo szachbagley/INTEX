@@ -1,4 +1,4 @@
-<!--This page renders when someone is adding an account-->
+<!--This is the login page-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,17 +20,17 @@
             <a href="resources">Resources</a>
         </nav>
     </div>
-    <!--This form adds a user to the RDS database-->
-    <div class="pageBody homeBodyText" style="position: absolute; top: 11%;">
-        <form action="/adduser" method="post" class="loginForm">
+    <!--This form sends the gathered information to the login route-->
+    <div class="pageBody homeBodyText" style="display: flex; justify-content: center;">
+        <form action="/addUser" method="post" class="loginForm" style="display: flex; justify-content: center;"">
             <fieldset class="loginContainer">
                 <div style="width: 80%;">
                     <h2 class="subHead" style="margin-top: 0vw; margin-bottom: 1.25vw;">Add User</h2>
                     <label for="user" style="width: 45%;">Username</label>
-                    <input type="text" class="usernameBox" id="user" name="user" >
+                    <input type="text" class="usernameBox" id="user" name="user" required autofocus>
                     <br><br>
                     <label for="pass" style="width: 45%;">Password</label>
-                    <input type="password" id="pass" name="pass">
+                    <input type="password" id="pass" name="pass" required>
                     <br><br>
                     <button type="submit" class="loginButton">Add User</button>
                 </div>
