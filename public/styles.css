@@ -566,7 +566,7 @@ margin-left: 2vw;
 
 table{
 width: 100vw; 
-height: 50vh;
+height: 100vh;
 background-color: white; 
 border: 2px solid black;
 }
@@ -579,6 +579,9 @@ font-family: "Montserrat", Arial, sans-serif;
 font-size: 15px;
 padding: 4px;
 font-weight: normal;
+position: sticky;
+top: 0; 
+z-index: 1;
 }
 
 td{
