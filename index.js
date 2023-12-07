@@ -66,11 +66,11 @@ app.get("/resources", (req, res) => {
 
 //this routes to the add an account page
 app.get("/addaccount", (req, res) => { 
-    //if (req.session.account) { //this checks if the user has already logged on in this session
+    if (req.session.account) { //this checks if the user has already logged on in this session
         res.render('addaccount');
-    //} else {
-     // res.render('unauthorized'); //if the user hasn't logged on then it will reoute them to an unauthorized page
-    //};     
+    } else {
+        res.render('unauthorized'); //if the user hasn't logged on then it will reoute them to an unauthorized page
+    };     
 });
 
 //this routes to the survey page
@@ -81,8 +81,6 @@ app.get("/survey", (req, res) => {
 //this route checks the logic of the login page
 const crypto = require('crypto');
 const bcrypt = require('bcrypt');
-
-
 
 // Hash function using crypto module
 function hashPassword(password) {
@@ -123,7 +121,6 @@ app.post('/adduser', (req, res) => {
   // Hash the password using bcrypt
   bcrypt.hash(password, 10, (err, hashedPassword) => {
     if (err) {
-      console.error('Error hashing password:', err);
       res.status(500).send('Internal Server Error');
       return;
     }
@@ -135,7 +132,6 @@ app.post('/adduser', (req, res) => {
     }).then(newUser => {
       res.redirect("/");
     }).catch(error => {
-      console.error('Error inserting new user:', error);
       res.status(500).send('Internal Server Error');
     });
   });
