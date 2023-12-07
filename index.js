@@ -206,6 +206,12 @@ app.get('/filterReport', (req, res) => {
                 queryBuilder = queryBuilder.where('main.occupation_status_id', parsed_occ)
             }
         }
+        if (req.query.city_filter){
+            if (req.query.city_filter != ""){
+                let parsed_city = parseInt(req.query.city_filter);
+                queryBuilder = queryBuilder.where('main.city_id', parsed_city)
+            }
+        }
         //once all the filters are put in it sends the query to RDS
         queryBuilder.then( allSurveys => {
             if (allSurveys.length) { //if any results return it sends them
