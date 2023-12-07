@@ -7,11 +7,11 @@
     <title>Provo Mental Health Project</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,700" rel="stylesheet" type="text/css" />
-
+    <script src="scripts.js"></script>
 </head>
-<body>
-    <div class="pageHeader"><!--header div-->
-        <nav class="homeLink"><a href="/"><span class="logo" style="color: #B3DC97;">Provo Mental Health</span></a><!--link to home--></nav><nav class="navPages"><!--nav to pages-->
+<body onload="changeNav()" onresize="changeNav()">
+    <div id="navBar" class="fullPageNav" onclick="toggle()"><!--header div-->
+        <nav id="homeLink"><a href="/"><span id="logo" style="color: #B3DC97;">Provo Mental Health</span></a><!--link to home--></nav><nav id="navMenu" class="navPages"><!--nav to pages-->
             <a href="survey">Survey</a>
             <a href="dashboard">Dashboard</a>
             <a href="login">Login</a>
@@ -22,13 +22,14 @@
     </div>
     <div id="landingWelcome" style="margin-top: 0%;">
         <div style="width: 100%;">
-            <img class="intexBackgroundImg" style="float: right; border-radius: 0vw 0vw 0vw 10vw;" src="fisher.jpg">
+            <img id="intexBackgroundImg1" style="float: right; border-radius: 0vw 0vw 0vw 10vw;" src="fisher.jpg">
             <h1 class="head" id="intexBanner">Welcome to the Provo Mental Health Project</h1>
         </div>
         <hr style="width: 100%; background-color: white; margin-bottom: 0%; border: none;">
         <div style="width: 100%; height: 50%; margin-top: 0%;">
-            <img class="intexBackgroundImg" style="float: left; border-radius: 0vw 10vw 10vw 0vw;" src="mountain.jpg">
-            <div style="width: 40%; float: right; margin-top: 3%; display: flex; justify-content: center; padding-right: 5%;">
+            <img id="intexBackgroundImg2" style="float: left; border-radius: 0vw 10vw 10vw 0vw;" src="mountain.jpg">
+            
+            <div class="landingBottom">
                 <div>
                     <h2 class="subHead">About the Project</h2>
                     <hr>
