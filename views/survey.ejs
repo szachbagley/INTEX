@@ -8,11 +8,11 @@ Authors: Nate Shaw, Zack Bagley, Caleb Gooch, Eli Baker-->
     <title>Mental Health Survey</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,700" rel="stylesheet" type="text/css" />
-
+    <script src="scripts.js"></script>
 </head>
-<body>
-    <div class="pageHeader"><!--header div-->
-        <nav class="homeLink"><a href="/"><span class="logo" style="color: #B3DC97;">Provo Mental Health</span></a><!--link to home--></nav><nav class="navPages"><!--nav to pages-->
+<body onload="changeNav()" onresize="changeNav()">
+    <div id="navBar" class="fullPageNav" onclick="toggle()"><!--header div-->
+        <nav id="homeLink"><a href="/"><span id="logo" style="color: #B3DC97;">Provo Mental Health</span></a><!--link to home--></nav><nav id="navMenu" class="navPages"><!--nav to pages-->
             <a href="survey">Survey</a>
             <a href="dashboard">Dashboard</a>
             <a href="login">Login</a>
