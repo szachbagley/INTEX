@@ -1,3 +1,4 @@
+//set navbar to mobile view
 function changeNav() {
     let navBar = document.getElementById('navBar');
     if (window.matchMedia("(max-width: 1000px)").matches) {
@@ -15,6 +16,7 @@ function changeNav() {
     console.log(navBar.classList);
 }
 
+//toggles the navigation menu in mobile view
 function toggle() {
     if (window.matchMedia("(max-width: 1000px)").matches) {
         let navBar = document.getElementById('navBar');
