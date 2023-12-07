@@ -66,11 +66,11 @@ app.get("/resources", (req, res) => {
 
 //this routes to the add an account page
 app.get("/addaccount", (req, res) => { 
-    if (req.session.account) { //this checks if the user has already logged on in this session
+    //if (req.session.account) { //this checks if the user has already logged on in this session
         res.render('addaccount');
-    } else {
-      res.render('unauthorized'); //if the user hasn't logged on then it will reoute them to an unauthorized page
-    };     
+    //} else {
+     // res.render('unauthorized'); //if the user hasn't logged on then it will reoute them to an unauthorized page
+    //};     
 });
 
 //this routes to the survey page
