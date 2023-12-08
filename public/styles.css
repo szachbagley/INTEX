@@ -237,7 +237,7 @@ text-align: left;
     }
   
   #navBar.mobileNav.visible #navMenu.navPages{ /*.visible*/
-    height: 40vh;
+    height: 35vh;
     font-size: 100%;
     width: 35vw;
     }
@@ -466,24 +466,6 @@ left: 50%;
 transform: translate(-50%, -50%);
 }
 
-/* Style for radio buttons */
-input[type="radio"] {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-appearance: none;
-border: 0.1vw solid #DB8C92;
-border-radius: 50%; /* Make it circular */
-width: 1vw; /* Adjust width as needed */
-height: 1vw; /* Adjust height as needed */
-vertical-align: middle;
-}
-
-/* Style for checked radio buttons */
-input[type="radio"]:checked {
-background-color: #DB8C92;
-}
-
 
 select {
 box-sizing: border-box;
@@ -494,14 +476,6 @@ border-radius: 0;
 height: 1.5vw; /* Adjust the height as needed */
 width: 10vw;
 font-size: .8vw; /* Adjust the font size as needed */
-}
-
-select option:checked {
-color: #DB8C92; /* Change to the desired color */
-}
-
-select option {
-font-size: 0.8vw; /* Adjust the font size as needed */
 }
 
 
@@ -515,39 +489,6 @@ border-radius: 0;
 height: 0.4vw;
 width: 10vw;
 }
-/* Style for checkboxes */
-input[type="checkbox"] {
-box-sizing: border-box;
-padding: 0.4vw; /* Adjust padding as needed */
-border: 0.1vw solid #DB8C92;
-border-radius: 0.2vw; /* Adjust border-radius for rounded corners */
-width: 1vw; /* Adjust the width as needed */
-height: 1vw; /* Adjust the height as needed */
-appearance: none; /* Remove default appearance */
-outline: none;
-position: relative;
-vertical-align: middle; /* Align checkboxes to the middle */
-}
-
-/* Style for checked checkboxes */
-input[type="checkbox"]:checked {
-background-color: #DB8C92; /* Change to the desired color */
-border-color: #DB8C92; /* Change to the desired color */
-}
-
-/* Style for checkmark in checked state */
-input[type="checkbox"]:checked::before {
-content: '\2713'; /* Checkmark character */
-color: white; /* Change to the desired color */
-display: block;
-text-align: center;
-line-height: 1vw; /* Adjust line-height for proper vertical alignment */
-font-size: 0.8vw; /* Adjust font-size for checkmark size */
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-}
 
 /* Style for radio buttons */
 input[type="radio"] {
@@ -567,27 +508,6 @@ input[type="radio"]:checked {
 background-color: #DB8C92;
 }
 
-
-select {
-box-sizing: border-box;
-background-color: white;
-color: gray;
-border: 0.1vw solid #DB8C92;
-border-radius: 0;
-height: 1.5vw; /* Adjust the height as needed */
-width: 10vw;
-font-size: .8vw; /* Adjust the font size as needed */
-}
-
-select option:checked {
-color: #DB8C92; /* Change to the desired color */
-}
-
-select option {
-font-size: 0.8vw; /* Adjust the font size as needed */
-}
-
-
 .usernameBox {
   float: right;
   height: 3vw;
@@ -600,7 +520,7 @@ background-color: white;
 color: #DB8C92;
 border: 0.1vw solid #DB8C92;
 border-radius: 0;
-height: 12%;
+height: 3.5vh;
 width: 10vw;
 float: right;
 }
@@ -627,7 +547,6 @@ background-color: white;
 color: gray;
 border: 2px solid #DB8C92;
 border-radius: 0;
-font-size: 0.8vw;
 }
 
 input[type=password]:focus {
@@ -915,9 +834,9 @@ padding: 20px; /* Add padding for better readability */
       }
 
       .pageBody{
-        padding-left: 25%;
-        padding-right: 25%;
-        padding-top: 8%;
+        padding-left: 12%;
+        padding-right: 12%;
+        padding-top: 15vh;
         padding-bottom: 15%;
       }
 
@@ -930,6 +849,75 @@ padding: 20px; /* Add padding for better readability */
         border-radius: 0;
         height: 3vh;
         width: 15vh;
+        }  
+
+  select {
+    box-sizing: border-box;
+    background-color: white;
+    color: gray;
+    border: 0.1vw solid #DB8C92;
+    border-radius: 0;
+    height: 3vh; /* Adjust the height as needed */
+    width: 15vh;
+    font-size: 2vh; /* Adjust the font size as needed */
+    }
+
+    input[type=password] {
+      box-sizing: border-box;
+      padding: 0.5vw;
+      background-color: white;
+      color: #DB8C92;
+      border: 0.1vw solid #DB8C92;
+      border-radius: 0;
+      height: 2vh;
+      width: 12vh;
+      float: right;
+      }
+
+      input[type=text] {
+        box-sizing: border-box;
+        padding: 0.5vw;
+        background-color: white;
+        color: gray;
+        border: 0.1vw solid #DB8C92;
+        border-radius: 0;
+        height: 2vh;
+        width: 12vh;
         }
-      
+
+        input[type="radio"] {
+          box-sizing: border-box;
+          margin: 0.5vh;
+          padding: 0;
+          appearance: none;
+          border: 0.1vh solid #DB8C92;
+          border-radius: 50%; /* Make it circular */
+          width: 1.5vh; /* Adjust width as needed */
+          height: 1.5vh; /* Adjust height as needed */
+          vertical-align: middle;
+          }
+
+    input[type="checkbox"] {
+      box-sizing: border-box;
+      margin: 0.5vh;
+      padding: 0.4vh; /* Adjust padding as needed */
+      border: 0.1vh solid #DB8C92;
+      border-radius: 0.2vw; /* Adjust border-radius for rounded corners */
+      width: 1.5vh; /* Adjust the width as needed */
+      height: 1.5vh; /* Adjust the height as needed */
+      appearance: none; /* Remove default appearance */
+      outline: none;
+      position: relative;
+      vertical-align: middle; /* Align checkboxes to the middle */
+      }
+
+      button {
+        background-color: #DB8C92;
+        color: white;
+        border: 2px solid #DB8C92;
+        border-radius: 0;
+        height: 4vh;
+        font-size: 2vh;
+        font-family: "Montserrat", Arial, sans-serif;
+        }
 }
