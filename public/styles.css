@@ -237,7 +237,7 @@ text-align: left;
     }
   
   #navBar.mobileNav.visible #navMenu.navPages{ /*.visible*/
-    height: 35vh;
+    height: fit-content;
     font-size: 100%;
     width: 35vw;
     }
