@@ -211,46 +211,42 @@ text-align: left;
     font-family: "Montserrat", Arial, sans-serif;
     width:70%;
     position: absolute;
+    top: 17%;
     padding-top: 5%;
-    font-size: 3vh;
+    font-size: 5vw;
     margin-bottom: 2vh;
     text-align: left;
     display: inline-block;
     vertical-align: middle;
   }
-  
-  #navBar.mobileNav.visible #navMenu.navPages{ /*.visible*/
+
+  #navBar.mobileNav #navMenu.navPages{
     font-family: "Montserrat", Arial, sans-serif;
-    margin-top: 2.5vh;
+    position: absolute;
+    top: 25%;
+    right: 7%;
     padding-bottom: 0vh;
-    padding-top: 2.5vh;
-    margin-bottom: 2vw;
-    height: 40vh;
-    width:30%;
+    padding-top: 5vh;
     float: right;
     border-radius: 20px;
     background-color: #DB8C92;
     text-align: center;
-    font-size: 2vh;
     font-weight: 300;
     transition: 0.2s ease-in-out;
-    vertical-align: middle;
+    justify-content: center;
+    }
+  
+  #navBar.mobileNav.visible #navMenu.navPages{ /*.visible*/
+    height: 40vh;
+    font-size: 100%;
+    width: 35vw;
     }
 
     #navBar.mobileNav.hidden #navMenu.navPages{ /*hidden*/
-      font-family: "Montserrat", Arial, sans-serif;
-      margin-top: 2.5vh;
-      margin-bottom: 2vw;
-      height: 5vh;
-      width:30%;
-      border-radius: 20px;
+      height: 1vh;
       background-color: #DB8C92;
-      text-align: right;
       font-size: 0;
-      font-weight: 300;
-      vertical-align: middle;
-      float: right;
-      transition: 0.2s ease-in-out;
+      width: 11vh;
       }
 
   #navBar.fullPageNav #navMenu.navPages{ 
@@ -271,6 +267,12 @@ text-align: left;
   vertical-align: middle;
   font-weight: 100;
   }
+
+  #navBar.mobileNav #navMenu.navPages a{
+
+    transition:0ms;
+
+    }
 
   #navBar.mobileNav.visible #navMenu.navPages a{
     font-weight: 250;
@@ -295,9 +297,11 @@ text-align: left;
   }
 
   #menuLabel{
-    padding-left: 3vh;
-    padding-top: 0.5vh;
-  
+    position: absolute;
+    top: 1.75vh;
+    text-align: center;
+    padding-left: 1.6vh;
+    margin-bottom: 10vh;
   }
 
   #navBar.fullPageNav #menuLabel{
@@ -307,9 +311,10 @@ text-align: left;
   }
 
   #navBar.mobileNav #menuLabel{
-    height: 3vh;
-    width: 3vh;
-    font-size: 3vh;
+    height: 3vw;
+    width: 3vw;
+    font-size: 2.5vh;
+
   }
 
 
@@ -844,7 +849,7 @@ padding: 20px; /* Add padding for better readability */
 
   #intexBanner {
     margin-bottom: 0%;
-    padding-top: 45vh;
+    padding-top: 35vh;
     font-size: 4vh;
     font-family: "Montserrat", Arial, sans-serif;
     font-weight: 300;
